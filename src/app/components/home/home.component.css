@@ -1,10 +1,35 @@
-.center{
-    text-align: center ;
-   font-size: x-large;
-   
-}
+
 .nav{
     text-align: right;
-    font-size: x-large;
 }
+
+.nav-link{
+color:white !important;
+font-size: 15px;
+}
+
+.center{
+  width:80vw;
+  text-align: center;
+}
+
+.img-slide-top{
+ height:100vh !important;
+}
+
+a{
+  color: white !important;
+}
+
+.d-block {
+  display: block;
+} 
+
+h3{
+  color:grey;
+}
+
+p{
+  font-size:16px;
+} 
 

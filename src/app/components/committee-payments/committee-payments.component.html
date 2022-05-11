@@ -11,7 +11,8 @@
         <label for="one"><input type="checkbox"  (change)="changeSelect(0)"  /> כל הדיירים</label>
       </div>
       <div id="mySelectOptions" *ngFor="let Dayar of dayarSer.listD">
-            <label for="one"><input type="checkbox" [(ngModel)]="Dayar.sendMail" name="asas" (change)="changeSelect(Dayar.DayarId)" value="one" /> {{Dayar.FirstName}}</label>
+            <label for="one"><input type="checkbox" [(ngModel)]="Dayar.sendMail" name="asas" (change)="changeSelect(Dayar.DayarId)" value="one" />
+             {{Dayar.FirstName}} {{Dayar.LastName}}<br> {{Dayar.NumFlat}} - דירה מספר <br></label>
           </div>
       
    <label for="paymentFor"> תשלום עבור:</label><br>

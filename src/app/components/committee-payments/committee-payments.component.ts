@@ -50,7 +50,7 @@ export class CommitteePaymentsComponent implements OnInit {
     {
       for(var i = 0; i < this.dayarSer.listD.length;i++){
         if(this.dayarSer.listD[i].sendMail)
-        this.dayarSer.sendMail(this.dayarSer.listD[i].MailAddress).subscribe(
+        this.paymentSer.sendMail(this.dayarSer.listD[i].MailAddress).subscribe(
           data=>{
             debugger
             if(data==null)

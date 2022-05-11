@@ -75,8 +75,6 @@ debugger
             else
             debugger
            { alert("עודכנה תוצאה חדשה מדייר זה")
-            // this.survey.Re1 -= 1;
-            // this.survey.Re2 += 1;
             this.location.back();}
           }, 
           err=>{console.log(err);}

@@ -1,20 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files *//* You can add global styles to this file, and also import other style files */
 .buttons{
     background-color: rgb(213, 213, 226);
     border-radius: 5px;
     font-size: 20px;
     text-align: right;
-   }
-   .input{
-    border-radius: 5px;
-    font-size: 20px;
-    text-align: right;
-}
-.center{
-    text-align: right;
-    font-size: large;
 }
 
- 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.input {
+    font-size: 15px;
+    text-align: right;
+}
+
+.center{
+    text-align: right;
+    font-size: 15px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+input {
+    font-size: 15px !important;
+    direction: rtl ;
+}
