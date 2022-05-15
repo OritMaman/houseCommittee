@@ -11,7 +11,7 @@ import { Dayar } from '../../classes/dayar';
   styleUrls: ['./list-dayarim.component.css']
 })
 export class ListDayarimComponent implements OnInit {
-  searchValue:any;
+  
    private list;
   constructor(public dayarSer: DayarService , public buildingSer: BuildingService, public r:Router) { }
   //topic = ['חשבון חודשי','אמייל','טלפון','שם משפחה','שם פרטי','מחיקה','עריכה'];//,'?מושכרת'
@@ -20,13 +20,14 @@ export class ListDayarimComponent implements OnInit {
   dayar: Dayar
  dayarToEdit:Dayar;
  isShow:boolean=true;
- listD:Array<Dayar>=new Array<Dayar>()
+ listD1:Array<Dayar>=new Array<Dayar>()
+ nameforSearch:any
  index = 0;
+ searchValue:any;
  
   ngOnInit(): void {
     this.getList();
-    this.list =  this.dayarSer.listD;
-    debugger
+
   }
   getList():void{
     this.dayarSer.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(
@@ -40,28 +41,12 @@ export class ListDayarimComponent implements OnInit {
   back(){
     this.getList(); 
   }
- // getList():void{
- //   this.dayarSer.addDayarim(this.buildingSer.numFlats,this.dayarSer.dayar.NumFlat).subscribe(
- //     data => {
-  //      this.dayarSer.listD = data;
-  //      debugger   
-  //    },
-  //    (err) => {console.log(err)}
-  //  );
- // }
+ 
   edit(dayar:Dayar){
     this.dayarToEdit = dayar;
     this.isShow=false;
   }
-//  edit(dayar:Dayar){
-  // this.dayarToEdit = dayar;
-   
-   //this.dayarSer.EditDayar(dayar).subscribe(
-    //d=>{this.dayarSer.listD=d},
-    //err=>{console.log(err);}
-    //)
-   //this.dayarToEdit = dayar;
-  //}
+
   search:string
   sortByName(){
     debugger
@@ -70,8 +55,6 @@ export class ListDayarimComponent implements OnInit {
 onMySave(dayarEdit:Dayar){
   debugger
 
-//var index = this.dayarSer.listD.findIndex(x => x.DayarId==dayarEdit.DayarId)
-//this.dayarSer[index] = dayarEdit;
 if(dayarEdit!=null)
 {
   this.dayarSer.EditDayar(dayarEdit).subscribe(
@@ -81,7 +64,7 @@ if(dayarEdit!=null)
     else
     {this.isShow = true;
       this.dayarSer.listD=d
-  // this.r.navigate['/headCommittee/list-dayarim'];
+ 
   this.getList();}
   },
   err=>{console.log(err);}
@@ -91,9 +74,14 @@ else
 this.isShow = true;
 }
 
-quickSearch(){
-  debugger 
-  this.list.setQuickFilter(this.searchValue);
+onKey(event: any){
+  this.listD1 = []
+  this.dayarSer.listD.forEach(element => {
+  if (element.FirstName.startsWith(event.target.value) || element.LastName.startsWith(event.target.value)||
+   element.Phone.startsWith(event.target.value) || element.MailAddress.startsWith(event.target.value)) {
+  this.listD1.push(element)
+    }
+  });
 }
   
 }

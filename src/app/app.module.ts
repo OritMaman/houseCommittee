@@ -45,6 +45,7 @@ import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
 import { SendReminderComponent } from './components/send-reminder/send-reminder.component';
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import { ResponseSurveyComponent } from './components/response-survey/response-survey.component';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -99,7 +100,8 @@ import { ResponseSurveyComponent } from './components/response-survey/response-s
     
     MatDatepickerModule,       
     MatNativeDateModule,
-    MatSelectModule        
+    MatSelectModule
+    // Ng2SearchPipeModule        
    
   ],
   
