@@ -1,25 +1,37 @@
-<h2>סקרים</h2>
-<button class="buttons" *ngIf="dayarSer.dayar.IsHouseCommittee" routerLink="/headCommittee/creatingSurvey">יצירת סקר חדש➕</button>
-
-<table *ngIf="surveysSer.listS.length > 0" class="table" >
+<h1 class="h1-title">סקרים</h1>
+<!-- <button class="buttons">יצירת סקר
+    חדש➕</button> -->
+<mat-icon class="mat-add" *ngIf="dayarSer.dayar.IsHouseCommittee"
+ routerLink="/headCommittee/creatingSurvey">add
+</mat-icon>
+<table *ngIf="surveysSer.listS.length > 0" class="table">
     <thead>
-<tr>
-    <td ><b>שם הסקר</b></td>
-    <td><b>אנשים שענו</b></td>
-    <td></td>
-</tr>
-<tr *ngFor="let survey of surveysSer.listS">
-    <td>{{survey.SubSurvey}}</td>
-    <td>ענו {{survey.NumAnswers}}</td><!--{{surveysSer.surveysToEnter.NumAnswers}}-->
-    <td>
-        <button class="buttons"   routerLink="/headCommittee/results/{{survey.SurveyId}}">תוצאות</button><!--(click)="enter(survey)"-->
-        <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons" (click)="creat(survey)">יצירת הזמנה</button>
-        <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons" (click)="deleteSurvey(survey.SurveyId,survey.BuildingId)">מחק סקר</button>
-        <button *ngIf="dayarSer.dayar.IsHouseCommittee" class="buttons"  routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}">כניסה לסקר</button><!--(click)="enter(survey)"-->
-        <button *ngIf="!dayarSer.dayar.IsHouseCommittee" class="buttons"  routerLink="/dayar/enterTheSurvey/{{survey.SurveyId}}">כניסה לסקר</button>
-    </td>
-</tr>
-</thead>
+        <tr>
+            <th><b>שם הסקר</b></th>
+            <th><b>אנשים שענו</b></th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let survey of surveysSer.listS">
+            <td>{{survey.SubSurvey}}</td>
+            <td>ענו {{survey.NumAnswers}}</td>
+            <!--{{surveysSer.surveysToEnter.NumAnswers}}-->
+            <td>
+                <mat-icon class="mat-set" routerLink="/headCommittee/results/{{survey.SurveyId}}">desktop_windows</mat-icon>
+                <mat-icon class="mat-set" *ngIf="dayarSer.dayar.IsHouseCommittee" (click)="creat(survey)">mail_outline
+                </mat-icon>
+                <mat-icon class="mat-set" *ngIf="dayarSer.dayar.IsHouseCommittee"
+                    (click)="deleteSurvey(survey.SurveyId,survey.BuildingId)">close</mat-icon>
+                <mat-icon class="mat-set" *ngIf="dayarSer.dayar.IsHouseCommittee"
+                    routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}">transit_enterexit</mat-icon>
+                <mat-icon class="mat-set" *ngIf="!dayarSer.dayar.IsHouseCommittee"
+                    routerLink="/dayar/enterTheSurvey/{{survey.SurveyId}}">transit_enterexit</mat-icon>
+
+
+
+
+            </td>
+        </tr>
+    </thead>
 </table>
 
 <!--<div *ngIf="isShow==false">

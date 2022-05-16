@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewCommitteeComponent } from './components/newCommittee/newCommittee.component';
@@ -45,7 +45,14 @@ import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
 import { SendReminderComponent } from './components/send-reminder/send-reminder.component';
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import { ResponseSurveyComponent } from './components/response-survey/response-survey.component';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,11 +106,18 @@ import { ResponseSurveyComponent } from './components/response-survey/response-s
     
     MatDatepickerModule,       
     MatNativeDateModule,
-    MatSelectModule        
-   
+    MatSelectModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatProgressBarModule,
+    MatIconModule,        
+   MatSidenavModule,
+   ChartsModule,MatRadioModule
   ],
   
   providers: [],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

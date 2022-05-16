@@ -1,0 +1,29 @@
+.td {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.th {
+    color: white;
+}
+tr {
+    width: 100%;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.table > thead > tr > td {
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    /* width: 100%; */
+    margin: 0 auto;
+    direction: rtl;
+    width: 80%;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 20px;
+    box-shadow: 0 16px 38px -12px rgb(155 155 155 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%),
+        0 8px 10px -5px rgb(0 0 0 / 20%);
+}

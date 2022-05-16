@@ -1,0 +1,13 @@
+.row-wrapper {
+    flex-flow: row;
+}
+.row-wrapper.reverse {
+    flex-flow: row-reverse;
+}
+.row-wrapper select {
+    width: 180px;
+}
+.mat-set{
+    margin-right: 5px;
+    border: 2px solid;
+}

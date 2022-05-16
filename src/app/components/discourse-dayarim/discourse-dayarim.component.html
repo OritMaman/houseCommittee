@@ -1,23 +1,32 @@
-<h2>שיח דיירים</h2>
-<label for="MessageContent"></label>
+<h1 class="h1-title">שיח דיירים</h1>
+<br>
 
-<input class="input" #MessageContent=ngModel id="MessageContent" name="MessageContent" type="string" placeholder="כתוב את ההודעה שלך כאן" required [(ngModel)]="message.MessageContent"/><br>
-<button class="buttons" (click)="addMessage();MessageContent.reset()">הוסף הודעה</button> 
+<input class="input" #MessageContent=ngModel id="MessageContent" name="MessageContent" type="string"
+    placeholder="כתוב את ההודעה שלך כאן" required [(ngModel)]="message.MessageContent" style="min-width:250px" />
+<mat-icon class="icon-send" (click)="addMessage();MessageContent.reset()">send</mat-icon>
+<!-- <button class="buttons" (click)="addMessage();MessageContent.reset()">הוסף הודעה</button>  -->
 <!-- <p>הוסף קובץ🔗</p><input type="file" name="file1"> -->
-<ul>
-   
-    <li *ngFor="let m of messageSer.listMessages">
-        {{m.MessageContent}}<br>{{m.TimeMessage|date:'dd/MM/yyyy'}}--{{m.TimeMessage|date:'HH:mm'}}--{{m.SenderName}}
-        
-    </li><br>
-    <li>!שלום לכל דיירי הבניין<br><br>
+<div class="row">
+    <ul class="col-6">
 
-           אנחנו גאים להציג לכם את לוח שיח הדיירים החדש של ועד חכם<br>
-        .הלוח מאפשר דו שיח בין כל דיירי הבניין בצורה פשוטה וידידותית<br>
-        .כל אחד מהדיירים יכול לכתוב פוסט ללוח וכל אחד מהדיירים האחרים יכול להוסיף תגובה<br>
-        ...זהו בדיוק המקום לכתוב סיכום של ישיבת הועד, או סתם לשאול אם למישהו יש סוכר שאפשר להלוות 
-        </li>
-</ul>
+        <li *ngFor="let m of messageSer.listMessages"
+            [ngClass]="{'li-user':dayarSer && dayarSer.dayar.DayarId==m.DayarId}">
+            <strong>
+                {{m.MessageContent}}</strong><br>{{m.TimeMessage|date:'dd/MM/yyyy'}}&nbsp;|&nbsp;{{m.TimeMessage|date:'HH:mm'}}&nbsp;|&nbsp;{{m.SenderName}}
+
+        </li><br>
+
+    </ul>
+    <div class="col-6 form-wrapper">
+        <h3>שלום לכל דיירי הבניין!</h3>
+        <p> אנחנו גאים להציג לכם את לוח שיח הדיירים החדש של ועד חכם<br>
+            .הלוח מאפשר דו שיח בין כל דיירי הבניין בצורה פשוטה וידידותית<br>
+            .כל אחד מהדיירים יכול לכתוב פוסט ללוח וכל אחד מהדיירים האחרים יכול להוסיף תגובה<br>
+            ...זהו בדיוק המקום לכתוב סיכום של ישיבת הועד, או סתם לשאול אם למישהו יש סוכר שאפשר להלוות</p>
+
+    </div>
+</div>
+
 <!--<div  *ngFor="let m of messageSer.listMessages">
     <iframe width="90%" height="70" frameborder="1">
        {{m.MessageContent}}

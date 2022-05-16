@@ -1,22 +1,68 @@
 <div *ngIf="isShow===0">
-<h2>דשבורד</h2>
-<!-- <table>
+    <h1 class="h1-title">לוח נתונים</h1>
+
+
+    <!-- <table>
    <tr><td>: מצב חשבון(משוערך)  <h2>₪{{deshbord.Yetera}}</h2></td><td></td><td></td><td></td></tr> 
    <tr><td></td><td><p>יתרה לאחר ההוצאות</p><h2>₪{{deshbord.Yetera}}</h2></td><td><p>הוצאות</p><h2>₪{{deshbord.Hotzaot}}</h2><button (click)="editHotzaot(deshbord)">🖊</button></td><td><p>הכנסות</p><h2>₪{{deshbord.Hachnasot}}</h2><button (click)="editHachnasot(deshbord)">🖊</button></td></tr> 
    <tr><td></td><td></td><td><p>תקלות שנסגרו</p><h2>{{deshbord.TakalotShenisgeru}}</h2></td><td><p>תקלות בטיפול</p><h2>{{deshbord.TakalotBetipul}}</h2></td></tr> 
 </table> -->
-: מצב חשבון(משוערך)  <h2>₪{{deshbord.Yetera}}</h2>
-<p>הכנסות</p><h2>₪{{deshbord.Hachnasot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee" routerLink="/headCommittee/hachnasot" >+</button><!--(click)="editHachnasot(deshbord)"-->
-<p>הוצאות</p><h2>₪{{deshbord.Hotzaot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee" routerLink="/headCommittee/hotzaot" >-</button><!--(click)="editHotzaot(deshbord)"-->
-<p>יתרה לאחר ההוצאות</p><h2>₪{{deshbord.Yetera}}</h2>
-<!-- <p>תקלות פתוחות</p> -->
-<p>תקלות בטיפול</p><h2>{{deshbord.TakalotBetipul}}</h2>
-<p>תקלות שנסגרו</p><h2>{{deshbord.TakalotShenisgeru}}</h2>
+    <div class="d-flex row">
+        <div class="card">
+            <div class="card-icon card-icon-4">
+                <mat-icon>attach_money</mat-icon>
+            </div>
+            <p class="title">יתרה לאחר ההוצאות</p>
+            <h2>₪{{deshbord.Yetera}}</h2>
+        </div>
+        <div class="card">
+            <div class="card-icon card-icon-2">
+                <mat-icon>add</mat-icon>
+            </div>
+            <p class="title">הכנסות</p>
+            <h2>₪{{deshbord.Hachnasot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee"
+                routerLink="/headCommittee/hachnasot">+</button>
+        </div>
+        <!--(click)="editHachnasot(deshbord)"-->
+        <div class="card">
+            <div class="card-icon card-icon-3">
+                <mat-icon>remove</mat-icon>
+            </div>
+            <p class="title">הוצאות</p>
+            <h2>₪{{deshbord.Hotzaot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee"
+                routerLink="/headCommittee/hotzaot">-</button>
+            <!--(click)="editHotzaot(deshbord)"-->
+        </div>
+      
+        <div class="card spec-card">
+            <div class="card-icon card-icon-1">
+                <mat-icon>money</mat-icon>
+            </div>
+            <p class="title"> מצב חשבון(משוערך) </p>
+            <h2>₪{{deshbord.Yetera}}</h2>
+        </div>
+    </div>
+    <div class="row round-wrap">
+        <div class="col-6" style="display: block">
+            <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+          </div>
+        <div class="round">
+            <p>תקלות בטיפול</p>
+            <h2>{{deshbord.TakalotBetipul}}</h2>
+        </div>
+        <!-- <p>תקלות פתוחות</p> -->
+        <div class="round">
+            <p>תקלות שנסגרו</p>
+            <h2>{{deshbord.TakalotShenisgeru}}</h2>
+        </div>
+    </div>
+
 </div>
 <div *ngIf="isShow===1">
     <app-hachnasot [deshbord]="deshbordToEdit" (onSave)="onMySave($event)"></app-hachnasot>
 </div>
- <div *ngIf="isShow===2">
+<div *ngIf="isShow===2">
     <app-hotzaot [deshbord]="deshbordToEdit" (onSave)="onMySave($event)"></app-hotzaot>
-</div> 
-<!--  פה אמור להיות גרף דשבורד נתונים -->
+</div>
+<!--  פה אמור להיות גרף לוח נתונים נתונים -->

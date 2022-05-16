@@ -1,36 +1,60 @@
-
-<h2>{{survey.SubSurvey}} הצג פירוט</h2>
-
-<div *ngIf="survey.Type=='טקסט חופשי'">
-    {{this.survey.NumAnswers}}<h3>דיירים הגיבו</h3>
-    <button (click)="showTheResponses()">לתגובות לחצו כאן</button>
-    <div *ngIf="isShow==true">
-        <ul>
-            <li *ngFor="let r of responseSer.listResponses">
-                {{r.ResponseDescription}}<br>{{r.SenderName}}
-                
-            </li>
-        </ul>
-    </div>
-</div>
-<div *ngIf="survey.Type=='בחירה ייחודית'">   
+<div class="form-wrapper">
+    <h1>{{survey.SubSurvey}} הצג פירוט</h1>
     
-    <h3>{{survey.Op1}} - {{survey.Re1}} קולות  </h3>
-    <h3>{{survey.Op2}} - {{survey.Re2}} קולות  </h3>
-    <div *ngIf="survey.NumOp >= 1"> <h3>{{survey.Op3}} - {{survey.Re3}} קולות </h3></div>
-    <div *ngIf="survey.NumOp >= 2"><h3>{{survey.Op4}} - {{survey.Re4}} קולות  </h3></div>
-    <div *ngIf="survey.NumOp >= 3"><h3>{{survey.Op5}} - {{survey.Re5}} קולות  </h3></div>
-    <div *ngIf="survey.NumOp >= 4"><h3>{{survey.Op6}} - {{survey.Re6}} קולות  </h3></div>
-    <h3>: ההחלטה הקובעת היא
-        <h2 *ngIf="survey.Re1 > survey.Re2 && survey.Re1 > survey.Re3 && survey.Re1 > survey.Re4 && survey.Re1 > survey.Re5 && survey.Re1 > survey.Re6">{{survey.Op1}}</h2>
-        <h2 *ngIf="survey.Re2 > survey.Re1 && survey.Re2 > survey.Re3  && survey.Re2 > survey.Re4  && survey.Re2 > survey.Re5  && survey.Re2 > survey.Re6">{{survey.Op2}}</h2>
-        <h2 *ngIf="survey.Re3 > survey.Re2 && survey.Re3 > survey.Re1 && survey.Re3 > survey.Re4 && survey.Re3 > survey.Re5 && survey.Re3  > survey.Re6">{{survey.Op3}}</h2>
-        <h2 *ngIf="survey.Re4 > survey.Re2 && survey.Re4 > survey.Re3 && survey.Re4 > survey.Re1 && survey.Re4 > survey.Re5 && survey.Re4 > survey.Re6">{{survey.Op4}}</h2>
-        <h2 *ngIf="survey.Re5 > survey.Re2 && survey.Re5> survey.Re3 && survey.Re5 > survey.Re4 && survey.Re5 > survey.Re1 && survey.Re5 > survey.Re6">{{survey.Op5}}</h2>
-        <h2 *ngIf="survey.Re6 > survey.Re2 && survey.Re6 > survey.Re3 && survey.Re6 > survey.Re4 && survey.Re6 > survey.Re5 && survey.Re6 > survey.Re1">{{survey.Op6}}</h2>
+    <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
+    <div *ngIf="survey.Type=='טקסט חופשי'">
+       <h3>  דיירים הגיבו <strong>{{this.survey.NumAnswers}}</strong></h3>
+        <button (click)="showTheResponses()">לתגובות לחצו כאן</button>
+        <div *ngIf="isShow==true">
+            <ul>
+                <li *ngFor="let r of responseSer.listResponses">
+                    {{r.ResponseDescription}} &nbsp; | &nbsp;{{r.SenderName}}
 
-        
-        <h2 *ngIf="survey.Re1 == survey.Re2 && survey.Re2 == survey.Re3 && survey.Re3 == survey.Re4  && survey.Re4 == survey.Re5 && survey.Re5 == survey.Re6">אין רוב</h2>
-    </h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="survey.Type=='בחירה ייחודית'">
+
+        <h3>{{survey.Op1}} - {{survey.Re1}} קולות </h3>
+        <h3>{{survey.Op2}} - {{survey.Re2}} קולות </h3>
+        <div *ngIf="survey.NumOp >= 1">
+            <h3>{{survey.Op3}} - {{survey.Re3}} קולות </h3>
+        </div>
+        <div *ngIf="survey.NumOp >= 2">
+            <h3>{{survey.Op4}} - {{survey.Re4}} קולות </h3>
+        </div>
+        <div *ngIf="survey.NumOp >= 3">
+            <h3>{{survey.Op5}} - {{survey.Re5}} קולות </h3>
+        </div>
+        <div *ngIf="survey.NumOp >= 4">
+            <h3>{{survey.Op6}} - {{survey.Re6}} קולות </h3>
+        </div>
+        <h3><strong>: ההחלטה הקובעת היא</strong>
+            <h2
+                *ngIf="survey.Re1 > survey.Re2 && survey.Re1 > survey.Re3 && survey.Re1 > survey.Re4 && survey.Re1 > survey.Re5 && survey.Re1 > survey.Re6">
+                {{survey.Op1}}</h2>
+            <h2
+                *ngIf="survey.Re2 > survey.Re1 && survey.Re2 > survey.Re3  && survey.Re2 > survey.Re4  && survey.Re2 > survey.Re5  && survey.Re2 > survey.Re6">
+                {{survey.Op2}}</h2>
+            <h2
+                *ngIf="survey.Re3 > survey.Re2 && survey.Re3 > survey.Re1 && survey.Re3 > survey.Re4 && survey.Re3 > survey.Re5 && survey.Re3  > survey.Re6">
+                {{survey.Op3}}</h2>
+            <h2
+                *ngIf="survey.Re4 > survey.Re2 && survey.Re4 > survey.Re3 && survey.Re4 > survey.Re1 && survey.Re4 > survey.Re5 && survey.Re4 > survey.Re6">
+                {{survey.Op4}}</h2>
+            <h2
+                *ngIf="survey.Re5 > survey.Re2 && survey.Re5> survey.Re3 && survey.Re5 > survey.Re4 && survey.Re5 > survey.Re1 && survey.Re5 > survey.Re6">
+                {{survey.Op5}}</h2>
+            <h2
+                *ngIf="survey.Re6 > survey.Re2 && survey.Re6 > survey.Re3 && survey.Re6 > survey.Re4 && survey.Re6 > survey.Re5 && survey.Re6 > survey.Re1">
+                {{survey.Op6}}</h2>
+
+
+            <h2
+                *ngIf="survey.Re1 == survey.Re2 && survey.Re2 == survey.Re3 && survey.Re3 == survey.Re4  && survey.Re4 == survey.Re5 && survey.Re5 == survey.Re6">
+                אין רוב</h2>
+        </h3>
+    </div>
+    <!-- <button (click)="back()">חזרה לרשימת הסקרים</button> -->
 </div>
-<button (click)="back()">חזרה לרשימת הסקרים</button>

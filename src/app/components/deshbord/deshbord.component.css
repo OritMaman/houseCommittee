@@ -1,37 +1,53 @@
 body {
-    background-color: #f9f9fa
+    background-color: #f9f9fa;
 }
 
 .flex {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
-    flex: 1 1 auto
+    flex: 1 1 auto;
 }
 
-@media (max-width:991.98px) {
+@media (max-width: 991.98px) {
     .padding {
-        padding: 1.5rem
+        padding: 1.5rem;
     }
 }
 
-@media (max-width:767.98px) {
+@media (max-width: 767.98px) {
     .padding {
-        padding: 1rem
+        padding: 1rem;
     }
 }
 
 .padding {
-    padding: 5rem
+    padding: 5rem;
 }
 
 .card {
     background: #fff;
     border-width: 0;
-    border-radius: .25rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
-    margin-bottom: 1.5rem
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    width: 200px;
+    height: 200px;
+    margin: 50px 20px;
 }
-
+.card button {
+    margin-top: -50px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 130px;
+    color: #7f7f7f;
+    border-color: #7f7f7f;
+}
 .card {
     position: relative;
     display: flex;
@@ -40,24 +56,109 @@ body {
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(19, 24, 44, .125);
-    border-radius: .25rem
+    border: 1px solid rgba(19, 24, 44, 0.125);
+    border-radius: 0.25rem;
+    box-shadow: 0 6px 30px -12px rgb(0 0 0 / 56%), 0 4px 20px 0 rgb(0 0 0 / 12%), 0 8px 5px -5px rgb(0 0 0 / 20%);
 }
-
+.card .title {
+    font-size: 18px;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    font-weight: 100;
+    color: #7b7b7b;
+    margin-top: 10px;
+}
 .card-header {
-    padding: .75rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     margin-bottom: 0;
-    background-color: rgba(19, 24, 44, .03);
-    border-bottom: 1px solid rgba(19, 24, 44, .125)
+    background-color: rgba(19, 24, 44, 0.03);
+    border-bottom: 1px solid rgba(19, 24, 44, 0.125);
 }
 
 .card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 
 card-footer,
 .card-header {
     background-color: transparent;
-    border-color: rgba(160, 175, 185, .15);
-    background-clip: padding-box
+    border-color: rgba(160, 175, 185, 0.15);
+    background-clip: padding-box;
+}
+mat-icon {
+    font-size: 36px;
+    line-height: 56px;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+}
+
+.card h2 {
+    text-align: center;
+    direction: ltr;
+    font-size: 3.5rem;
+    font-weight: 100;
+    font-family: cursive;
+    position: absolute;
+    bottom: 20px;
+    margin: auto;
+    display: block;
+    width: 100%;
+}
+
+.card-icon {
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: -20px;
+    margin-left: 15px;
+    width: 88px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 80px;
+}
+.card-icon-1 {
+    background: linear-gradient(131deg, #059fbe, #0dcaf0);
+    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
+}
+.card-icon-3 {
+    background: linear-gradient(131deg, #e63d05, #f0590d);
+    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
+}
+.card-icon-2 {
+    background: linear-gradient(131deg, #22ca00, #03f607);
+    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
+}
+.card-icon-4 {
+    background: linear-gradient(131deg, #ffd505, #f7f300);
+    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
+}
+.round-wrap,
+.row {
+    text-align: center;
+    justify-content: center;
+}
+.spec-card {
+    width: 210px;
+    height: 230px;
+    margin-top: 20px;
+    box-shadow: 0 8px 50px -12px rgb(0 0 0 / 56%), 0 4px 60px 0 rgb(0 0 0 / 12%), 0 8px 15px -5px rgb(0 0 0 / 20%);
+}
+.spec-card.card .title{margin-top: 20px;}
+.round {
+    width: 150px;
+    height: 150px;
+    background: #dd6d78;
+    /* background: linear-gradient(131deg, #af6b6b, #9f9293); */
+    border-radius: 50%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    line-height: 40px;
+    margin: 15px;
+    box-shadow: 0 6px 30px -12px rgb(0 0 0 / 56%), 0 4px 20px 0 rgb(0 0 0 / 12%), 0 8px 5px -5px rgb(0 0 0 / 20%);
+}
+.round h2 {
+    font-size: 6rem;
+    margin-top: -4px;
 }

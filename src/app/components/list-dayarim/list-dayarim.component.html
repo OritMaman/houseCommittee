@@ -1,37 +1,49 @@
-<h2>רשימת דיירים</h2>
+<h1 class="h1-title">רשימת דיירים</h1>
+<br>
 <!--למה רק אחרי לחיצה כפולה הוא מציג לי את הטבלה-->
 <!--<label for="dayar">list</label><br/> 
       <select id="dayar" name="listDayarim"> 
        
           <option *ngFor="let dayar of listDayarim" > {{dayar.FirstName}}</option>
       </select >
-      <br/>--><!--[(ngModel)]="building.CityId"  [ngValue]="city.CityId"-->
-   
+      <br/>-->
+<!--[(ngModel)]="building.CityId"  [ngValue]="city.CityId"-->
+
 <div *ngIf="isShow===true">
-    <input type="text" placeholder="...חיפוש דייר" name="search" [(ngModel)]="searchValue"/>
-       <!-- (keyup)="quickSearch()"
+    <input type="text" placeholder="חיפוש דייר..." name="search" [(ngModel)]="searchValue" style="min-width:250px"
+        class="input" />
+    <mat-icon class="icon-search">search</mat-icon>
+    <!-- (keyup)="quickSearch()"
          | filter: searchValue
          <input class="buttons" type="button" value="search" (click)="sortByName()"><br>
    <button (click)="back()">חזור</button>  -->
-<table class="table">
-    <thead>
-        <tr *ngIf="dayarSer.dayar.IsHouseCommittee" class="th"><th class="topic" *ngFor="let topic of topics">  {{topic}}  </th></tr>
-        <tr *ngIf="!dayarSer.dayar.IsHouseCommittee" class="th"><th class="topic" *ngFor="let topic2 of topics2">  {{topic2}}  </th></tr>
-       
-    <tr class="td" *ngFor="let Dayar of dayarSer.listD"> 
-        <td *ngIf="dayarSer.dayar.IsHouseCommittee"><button (click)="edit(Dayar)">✍🏻</button></td> <!--*ngIf="dayar.IsHouseCommittee==true"-->
-        <td *ngIf="dayarSer.dayar.IsHouseCommittee">₪{{Dayar.SumToMonth}}</td>
-        <td >{{Dayar.MailAddress}}</td>
-        <td >{{Dayar.Phone}}</td>
-        <td >דירה  {{Dayar.NumFlat}}</td>
-        <td >{{Dayar.LastName}}</td>
-        <td *ngIf="!Dayar.FirstName">דירה - {{Dayar.NumFlat}}</td>
-        <td >{{Dayar.FirstName}}</td>  
-   
-        </tr>   
-   </thead>
-</table>
-</div><!--dayarSer.listD-->
+    <br>
+    <table class="table">
+        <thead>
+            <tr *ngIf="dayarSer.dayar.IsHouseCommittee" class="th">
+                <th class="topic" *ngFor="let topic of topics"> {{topic}} </th>
+            </tr>
+            <tr *ngIf="!dayarSer.dayar.IsHouseCommittee" class="th">
+                <th class="topic" *ngFor="let topic2 of topics2"> {{topic2}} </th>
+            </tr>
+
+            <tr class="td" *ngFor="let Dayar of dayarSer.listD">
+                <td *ngIf="dayarSer.dayar.IsHouseCommittee"><button (click)="edit(Dayar)">✍🏻</button></td>
+                <!--*ngIf="dayar.IsHouseCommittee==true"-->
+                <td *ngIf="dayarSer.dayar.IsHouseCommittee">₪{{Dayar.SumToMonth}}</td>
+                <td>{{Dayar.MailAddress}}</td>
+                <td>{{Dayar.Phone}}</td>
+                <td>דירה {{Dayar.NumFlat}}</td>
+                <td>{{Dayar.LastName}}</td>
+                <td *ngIf="!Dayar.FirstName">דירה - {{Dayar.NumFlat}}</td>
+                <td>{{Dayar.FirstName}}</td>
+
+            </tr>
+        </thead>
+    </table>
+</div>
+<!--dayarSer.listD-->
 <div *ngIf="isShow===false">
-    <app-edit-dayar [dayar]="dayarToEdit" (onSave)="onMySave($event)"></app-edit-dayar><!---->
+    <app-edit-dayar [dayar]="dayarToEdit" (onSave)="onMySave($event)"></app-edit-dayar>
+    <!---->
 </div>
