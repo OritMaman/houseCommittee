@@ -6,6 +6,7 @@
     <div class="container-fluid" style="direction: rtl">
       <div mdbCollapse class="collapse navbar-collapse" id="fixedNavbarExample">
         <ul class="navbar-nav mb-2 mb-lg-0">
+        
           <li class="nav-item">
             <a class="nav-link" href="#">שלום   {{this.d.dayar.FirstName}} {{this.d.dayar.LastName}}</a>
           </li>
@@ -25,7 +26,7 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened mode="side" position="end" class="side-cont-admin">
       <mat-nav-list>
-
+       
           <a mat-list-item  routerLink="/headCommittee/deshbord"
          routerLinkActive="active_link">
               <mat-icon>dashboard</mat-icon> &nbsp;לוח נתונים
@@ -58,6 +59,9 @@
   </mat-sidenav>
   <mat-sidenav-content>
       <div class="bg"></div>
+      <div  class="logo">
+          
+      </div>
       <div style="height: calc(100vh - 110px);">
          
           <div class="content-div">

@@ -1,42 +1,45 @@
-<p>faults works!</p>
+<h1 class="h1-title">תקלות</h1>
 
-<button class="buttons" routerLink="/headCommittee/AddFault">פתח תקלה חדשה ➕</button>
-<hr/>
-<h5>סינונים שונים</h5>
+<br>
+<h6>סנן</h6>
+<div class="row">
+    <!-- <label>בחר רמת דחיפות התקלה לסינון</label> -->
+    <select (change)="sortByUrgency($event)">
+        <!--<option value="0" disabled>בחר</option>-->
+        <option *ngFor="let u of AllUrgencyLevel">רמת דחיפות {{u.NameUrgency}}</option>
+    </select>
+    <!-- <label> בחר קטגוריית תקלה לסינון</label> -->
+    <select (change)="sortByCategory($event)">
+        <option *ngFor="let c of AllTakalotCategory">תקלה ב{{c.DescriptionC}}</option>
+    </select>
 
-<label>בחר רמת דחיפות התקלה לסינון</label>
-<select (change)="sortByUrgency($event)" >
-    <!--<option value="0" disabled>בחר</option>-->
-    <option *ngFor="let u of AllUrgencyLevel">{{u.NameUrgency}}</option>
-</select><br>
-<label> בחר קטגוריית תקלה לסינון</label>
-<select (change)="sortByCategory($event)" >
-    <option *ngFor="let c of AllTakalotCategory">{{c.DescriptionC}}</option>
-</select><br>
-
-<label>מיון לפי סטטוס</label>
-<button (click)="sortByStatus(0)">תקלות שעדיין בטיפול</button><br>
-<button (click)="sortByStatus(1)"> תקלות שטופלו כבר</button><br/>
-<button (click)="clear()">ניקוי הסינון</button>
-<hr/> 
-
+    <!-- <label>מיון לפי סטטוס</label> -->
+    <button class="buttons" (click)="sortByStatus(0)">תקלות שעדיין בטיפול</button><br>
+    <button class="buttons" (click)="sortByStatus(1)"> תקלות שטופלו כבר</button><br />
+    <button class="buttons-nocolor" (click)="clear()">ניקוי הסינון</button>
+</div>
 
 
-<h5>כל התקלות</h5>
+
+<!-- <button class="buttons" routerLink="/headCommittee/AddFault">פתח תקלה חדשה ➕</button> -->
+<mat-icon class="mat-add" routerLink="/headCommittee/AddFault">add</mat-icon>
+<br>
 <table class="table">
     <thead>
-        <tr class="th"><th class="topic" *ngFor="let topic of topics">  {{topic}}  </th></tr>
-      
-    <tr class="td" *ngFor="let t of AllTakalotAfterSort"> 
-        <td>{{t.TakalaDescription}}</td>
-        <td>{{t.OpenDate|date:'dd/MM/yyyy'}}</td>
-        <td>{{t.UrgencyName}}</td>
-        <td><input type="checkbox" [checked]="t.OpenTakala" (change)="changeOpen($event,t)"/></td>
-          <td>{{t.DayarName}}</td>
-          <td>{{t.CategoryName}}</td>
-          <td>{{t.TakalotId}}</td>
-        </tr>   
-   </thead>
+        <tr class="th">
+            <th class="topic" *ngFor="let topic of topics"> {{topic}} </th>
+        </tr>
+
+        <tr class="td" *ngFor="let t of AllTakalotAfterSort">
+            <td>{{t.TakalaDescription}}</td>
+            <td>{{t.OpenDate|date:'dd/MM/yyyy'}}</td>
+            <td>{{t.UrgencyName}}</td>
+            <td><input type="checkbox" [checked]="t.OpenTakala" (change)="changeOpen($event,t)" /></td>
+            <td>{{t.DayarName}}</td>
+            <td>{{t.CategoryName}}</td>
+            <td>{{t.TakalotId}}</td>
+        </tr>
+    </thead>
 </table>
 <!-- <table>
 
@@ -61,4 +64,3 @@
         <td><button>לתיאום עם איש מקצוע</button></td>
     </tr>
 </table> -->
-

@@ -1,38 +1,49 @@
-<div class="center">
-<h1>אשף יצירת בניין חדש</h1>
-  <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a><a routerLink="/headCommittee/dayarDetails"> > פרטי דיירים > </a><a (click)="next(0)">חשבון בנק</a>
+<div class="center form-wrapper">
+  <h1>אשף יצירת בניין חדש</h1>
+  <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a><a routerLink="/headCommittee/dayarDetails"> > פרטי
+    דיירים > </a><a (click)="next(0)">חשבון בנק</a>
 
-<h2 *ngIf="buildingSer.flatHC != buildingSer.counter+1">{{buildingSer.counter+1}} פרטי דייר - דירה</h2>
-<h2 *ngIf="buildingSer.flatHC == buildingSer.counter+1">{{buildingSer.counter+2}} פרטי דייר - דירה</h2>
-<form #dayarDetails="ngForm"> 
- 
-<label for="FirstName">:שם פרטי</label><br/> 
-<input *ngIf="buildingSer.flatHC != buildingSer.counter+1" placeholder="{{buildingSer.counter+1}} - דירה" class="input" #FirstName="ngModel" id="FirstName" name="FirstName" type="string" required [(ngModel)]="dayar.FirstName"/>  
- <!--<div [hidden]="FirstName.valid || FirstName.pristine">שדה חובה*</div>-->
- <br/>
-<input *ngIf="buildingSer.flatHC == buildingSer.counter+1" placeholder="{{buildingSer.counter+2}} - דירה" class="input" #FirstName="ngModel" id="FirstName" name="FirstName" type="string" required [(ngModel)]="dayar.FirstName"/> 
-<br/> 
- <label for="LastName">: שם משפחה</label><br/> 
-<input class="input" #LastName="ngModel" id="LastName" name="LastName" type="string" required [(ngModel)]="dayar.LastName"/>  
- <div [hidden]="LastName.valid || LastName.pristine">שדה חובה*</div>
- <br/>
- <label for="Phone">: טלפון</label><br/>
- <input class="input" #Phone=ngModel id="Phone" name="Phone" type="string" required [(ngModel)]="dayar.Phone"/>        
- <div [hidden]="Phone.valid || Phone.pristine">שדה חובה*</div> 
- <br/>
- <label for="MailAddress">: דוא"ל</label><br/>
- <input class="input" #MailAddress=ngModel id="MailAddress" name="MailAddress" type="string" required [(ngModel)]="dayar.MailAddress"/>        
- <div [hidden]="MailAddress.valid || MailAddress.pristine">שדה חובה*</div>
-</form > <br/>
-<div *ngIf="buildingSer.radioB1==false">
-<label for="SumToMonth">: חשבון חודשי</label><br/>
- <input class="input" #SumToMonth="ngModel" id="SumToMonth" name="SumToMonth" type="number" required [(ngModel)]="dayar.SumToMonth"/> 
- <div [hidden]="SumToMonth.valid || SumToMonth.pristine">שדה חובה*</div>
- <br/><!--disable במקרה שכפתור התשלום זהה בין כל הדיירים מעמוד קודם אינו נבחר-->
-</div>
+  <h2 *ngIf="buildingSer.flatHC != buildingSer.counter+1">{{buildingSer.counter+1}} פרטי דייר - דירה</h2>
+  <h2 *ngIf="buildingSer.flatHC == buildingSer.counter+1">{{buildingSer.counter+2}} פרטי דייר - דירה</h2>
+  <form #dayarDetails="ngForm">
 
- שכירות<input type="checkbox"><br/>
-<button class="buttons" (click)="next(1);dayarDetails.reset()" >דירה הבאה</button>
+    <label for="FirstName">:שם פרטי</label><br />
+    <input *ngIf="buildingSer.flatHC != buildingSer.counter+1" placeholder="{{buildingSer.counter+1}} - דירה"
+      class="input" #FirstName="ngModel" id="FirstName" name="FirstName" type="string" required
+      [(ngModel)]="dayar.FirstName" />
+    <!--<div [hidden]="FirstName.valid || FirstName.pristine">שדה חובה*</div>-->
+    <br />
+    <input *ngIf="buildingSer.flatHC == buildingSer.counter+1" placeholder="{{buildingSer.counter+2}} - דירה"
+      class="input" #FirstName="ngModel" id="FirstName" name="FirstName" type="string" required
+      [(ngModel)]="dayar.FirstName" />
+    <br />
+    <label for="LastName">: שם משפחה</label><br />
+    <input class="input" #LastName="ngModel" id="LastName" name="LastName" type="string" required
+      [(ngModel)]="dayar.LastName" />
+    <div [hidden]="LastName.valid || LastName.pristine">שדה חובה*</div>
+    <br />
+    <label for="Phone">: טלפון</label><br />
+    <input class="input" #Phone=ngModel id="Phone" name="Phone" type="string" required [(ngModel)]="dayar.Phone" />
+    <div [hidden]="Phone.valid || Phone.pristine">שדה חובה*</div>
+    <br />
+    <label for="MailAddress">: דוא"ל</label><br />
+    <input class="input" #MailAddress=ngModel id="MailAddress" name="MailAddress" type="string" required
+      [(ngModel)]="dayar.MailAddress" />
+    <div [hidden]="MailAddress.valid || MailAddress.pristine">שדה חובה*</div>
+  </form> <br />
+  <div *ngIf="buildingSer.radioB1==false">
+    <label for="SumToMonth">: חשבון חודשי</label><br />
+    <input class="input" #SumToMonth="ngModel" id="SumToMonth" name="SumToMonth" type="number" required
+      [(ngModel)]="dayar.SumToMonth" />
+    <div [hidden]="SumToMonth.valid || SumToMonth.pristine">שדה חובה*</div>
+    <br />
+    <!--disable במקרה שכפתור התשלום זהה בין כל הדיירים מעמוד קודם אינו נבחר-->
+  </div>
+
+  שכירות<input type="checkbox"><br />
+  <button class="buttons" (click)="next(1);dayarDetails.reset()">דירה הבאה</button><br />
+
+
+  <button class="buttons" (click)="next(0)">הבא</button>
+  <button class="buttons" routerLink="/headCommittee/creatingBuilding">חזור</button>
 </div>
-<button class="buttons" (click)="next(0)">הבא</button>
-<button class="buttons" routerLink="/headCommittee/creatingBuilding">חזור</button>
