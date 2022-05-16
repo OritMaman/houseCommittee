@@ -16,7 +16,7 @@
           </div>
       
    <label for="paymentFor"> תשלום עבור:</label><br>
-   <input type="text" id="paymentFor"><br><br>
+   <input type="text" id="paymentFor" name="for" [(ngModel)]="payFor"><br><br>
    תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
     <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
       <!-- <div *ngIf="paymentSer.radioB1">
@@ -25,7 +25,7 @@
      תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
      <div *ngIf="!paymentSer.radioB1">
         <label for="sum"> סכום:</label><br>
-        <input type="text" id="sum">
+        <input type="text" id="sum"  name="sum" [(ngModel)]="sum">
       </div><br><br>
       <button (click)="send()">שלח תזכורת לתשלום</button>
       

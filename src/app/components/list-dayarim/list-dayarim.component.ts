@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Building } from 'src/app/classes/building';
 import { BuildingService } from 'src/app/services/building.service';
 import { DayarService } from 'src/app/services/dayar.service';
 import { Dayar } from '../../classes/dayar';
+//import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-dayarim',
@@ -14,7 +15,7 @@ export class ListDayarimComponent implements OnInit {
   
    private list;
   constructor(public dayarSer: DayarService , public buildingSer: BuildingService, public r:Router) { }
-  //topic = ['חשבון חודשי','אמייל','טלפון','שם משפחה','שם פרטי','מחיקה','עריכה'];//,'?מושכרת'
+  
   topics = ['עריכה','חשבון חודשי','אמייל','טלפון','דירה','שם משפחה','שם פרטי'];
   topics2 = ['אמייל','טלפון','דירה','שם משפחה','שם פרטי'];
   dayar: Dayar
@@ -25,6 +26,9 @@ export class ListDayarimComponent implements OnInit {
  index = 0;
  searchValue:any;
  
+
+ //@ViewChild('paginator') paginator:MatPaginator;
+
   ngOnInit(): void {
     this.getList();
 

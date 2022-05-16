@@ -1,7 +1,7 @@
 <h2>רשימת דיירים</h2>
    
 <div *ngIf="isShow===true">
-    <input type="text" placeholder="...חיפוש דייר" name="search"  (keyup)="onKey($event)"/>
+    <input type="text" placeholder="חיפוש דייר..." name="search"  (keyup)="onKey($event)"/><br><br>
     <div *ngIf="listD1.length!=0">
     <table class="table">
         <thead>
@@ -42,7 +42,9 @@
    </thead>
 </table>
 </div>
+<!-- <mat-paginator #paginator pageSize=6 showFirstLastButtons></mat-paginator> -->
 </div>
+ 
 <div *ngIf="isShow===false">
-    <app-edit-dayar [dayar]="dayarToEdit" (onSave)="onMySave($event)"></app-edit-dayar><!---->
+    <app-edit-dayar [dayar]="dayarToEdit" (onSave)="onMySave($event)"></app-edit-dayar>
 </div>

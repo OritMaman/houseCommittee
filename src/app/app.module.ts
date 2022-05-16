@@ -46,6 +46,7 @@ import { SendReminderComponent } from './components/send-reminder/send-reminder.
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import { ResponseSurveyComponent } from './components/response-survey/response-survey.component';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
+//import { JwPaginationModule } from 'jw-angular-pagination';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,7 @@ import { ResponseSurveyComponent } from './components/response-survey/response-s
     BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
-    
+    //JwPaginationModule,
     
     MatDatepickerModule,       
     MatNativeDateModule,

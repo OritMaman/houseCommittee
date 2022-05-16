@@ -37,9 +37,9 @@ import { ResponseSurveyComponent } from './components/response-survey/response-s
 
 
 const routes: Routes = [
-  {path:"home", component: HomeComponent },
+  {path:"", component: HomeComponent },
   {path: "newCommittee", component: NewCommitteeComponent},
-  {path: "password-change", component: PasswordChangeComponent},
+  {path: "password-change/:id", component: PasswordChangeComponent},
   {path: "send-reminder", component: SendReminderComponent},
   {path: "response-survey", component: ResponseSurveyComponent},
   {path: "head-committee", component: HeadCommitteeComponent,children:[

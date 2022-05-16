@@ -25,9 +25,13 @@ GetAllById(id:number):Observable<Array<Payment>>
 {
   return this.http.get<Array<Payment>>(this.url+"GetAllById/"+id)
 }
-sendMail(mailTo:string):Observable<boolean>
+// sendMail(mailTo:string):Observable<boolean>
+// {debugger
+//   return this.http.get<boolean>(this.url+"SendEmail/"+mailTo)
+// }
+sendMail(mailTo:Array<Dayar>,payFor:string):Observable<boolean>
 {debugger
-  return this.http.get<boolean>(this.url+"SendEmail/"+mailTo)
+  return this.http.post<boolean>(this.url+"SendEmail"+mailTo,payFor)
 }
 
 }

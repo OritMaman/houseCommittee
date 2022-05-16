@@ -16,7 +16,7 @@ export class CommitteePaymentsComponent implements OnInit {
   cities: Cities[];
 
   toppings = new FormControl();
-
+  payFor:string
   ngOnInit(): void {
 
 
@@ -39,32 +39,15 @@ export class CommitteePaymentsComponent implements OnInit {
 
       )
 
-    // else {
-    //   let d = this.dayarSer.listD.find(x => x.DayarId == e)
-    //   d.sendMail = !d.sendMail
-
-    // }
   }
   send(){
-    if(this.paymentSer.radioB1==true)
-    {
-      for(var i = 0; i < this.dayarSer.listD.length;i++){
-        if(this.dayarSer.listD[i].sendMail)
-        this.paymentSer.sendMail(this.dayarSer.listD[i].MailAddress).subscribe(
-          data=>{
-            debugger
-            if(data==null)
-            alert("problem")
-            else
-            alert("yesssss")
-          },err=>{alert(err)})
-      }
-      // this.paymentSer.sendMail(this.dayarSer.listD).subscribe(
-      //   data=>{
-      //     if(data==null)
-      //     alert("problem")
-      //   },err=>{alert(err)})
+   //  if(this.paymentSer.radioB1==true)
+      this.paymentSer.sendMail(this.dayarSer.listD,this.payFor).subscribe(
+        data=>{
+          if(data==null)
+          alert("problem")
+        },err=>{alert(err)})
+      
     
-    }
   }
 }
