@@ -172,12 +172,14 @@ mat-cardlabel {
     width: 100%;
 }
 
-.error {
+.error.red {
     font-size: 11px;
     color: red;
-    margin-bottom: -15px;
-    margin-top: -3px;
-    margin-left: 1px;
+    display: block;
+    float: left;
+    position: absolute;
+    left: 7px;
+    font-weight: bold;
 }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
