@@ -23,25 +23,14 @@
     <label for="paymentFor"> תשלום עבור:</label><br>
     <input type="text" class="input" id="paymentFor"><br><br>
 
-    <mat-radio-group   [ngModelOptions]="{standalone: true}"  [(ngModel)]="paymentSer.radioB1" class="example-radio-group">
-      <mat-radio-button     class="example-margin" value="true"
-     >תשלום חודשי</mat-radio-button>
-      <mat-radio-button    class="example-margin" value="false"
-      > תשלום חד פעמי</mat-radio-button>
-    </mat-radio-group>
-
-
-    <!-- תשלום חודשי: <input type="radio" name="radio1" checked [value]="true"
-     [(ngModel)]="paymentSer.radioB1"><br> -->
+    
+    תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
     <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
     <!-- <div *ngIf="paymentSer.radioB1">
         <p>תאריך</p>
       </div> -->
-    <!-- תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
-   -->
-  
-  
-    <div *ngIf="paymentSer.radioB1 == 'false">
+    תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
+    <div *ngIf="!paymentSer.radioB1">
       <label for="sum"> סכום:</label><br>
       <input type="text" class="input" id="sum">
     </div><br><br>
