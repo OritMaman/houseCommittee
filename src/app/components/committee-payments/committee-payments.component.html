@@ -4,33 +4,34 @@
     <a routerLink="/headCommittee/one-timePayment">תזכורת לתשלום חד פעמי</a>
     
     </nav> -->
-  <h2>יצירת תזכורות לתשלום</h2>
-    <label for="to">אל:</label><br>
-    <form>
-      <div id="mySelectOptions" >
-        <label for="one"><input type="checkbox"  (change)="changeSelect(0)"  /> כל הדיירים</label>
-      </div>
-      <div id="mySelectOptions" *ngFor="let Dayar of dayarSer.listD">
-            <label for="one"><input type="checkbox" [(ngModel)]="Dayar.sendMail" name="asas" (change)="changeSelect(Dayar.DayarId)" value="one" />
-             {{Dayar.FirstName}} {{Dayar.LastName}}<br> {{Dayar.NumFlat}} - דירה מספר <br></label>
-          </div>
-      
-   <label for="paymentFor"> תשלום עבור:</label><br>
-   <input type="text" id="paymentFor" name="for" [(ngModel)]="payFor"><br><br>
-   תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
-    <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
-      <!-- <div *ngIf="paymentSer.radioB1">
+<h2>יצירת תזכורות לתשלום</h2>
+
+<form>
+  <div id="mySelectOptions">
+    <label for="one">
+      <mat-checkbox (change)="changeSelect(0)">כל הדיירים</mat-checkbox>
+    </label>
+  </div>
+  <div id="mySelectOptions" *ngFor="let Dayar of dayarSer.listD">
+    <label for="one"><input type="checkbox" [(ngModel)]="Dayar.sendMail" name="asas"
+        (change)="changeSelect(Dayar.DayarId)" value="one" />
+      {{Dayar.FirstName}} {{Dayar.LastName}} &nbsp;|&nbsp; {{Dayar.NumFlat}} - דירה מספר <br></label>
+  </div>
+
+  <label for="paymentFor"> תשלום עבור:</label><br>
+  <input type="text" id="paymentFor" name="for" [(ngModel)]="payFor"><br><br>
+  תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
+  <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
+  <!-- <div *ngIf="paymentSer.radioB1">
         <p>תאריך</p>
       </div> -->
-     תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
-     <div *ngIf="!paymentSer.radioB1">
-        <label for="sum"> סכום:</label><br>
-        <input type="text" id="sum"  name="sum" [(ngModel)]="sum">
-      </div><br><br>
-      <button (click)="send()">שלח תזכורת לתשלום</button>
-      
-    </form>
-      
-      <!-- <p-multiSelect [options]="cities" [(ngModel)]="selectedCities2" defaultLabel="Select a City" optionLabel="CityName"></p-multiSelect> -->
-        
-       
+  תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
+  <div *ngIf="!paymentSer.radioB1">
+    <label for="sum"> סכום:</label><br>
+    <input type="text" id="sum" name="sum" [(ngModel)]="sum">
+  </div><br><br>
+  <button class="buttons" (click)="send()">שלח תזכורת לתשלום</button>
+
+</form>
+
+<!-- <p-multiSelect [options]="cities" [(ngModel)]="selectedCities2" defaultLabel="Select a City" optionLabel="CityName"></p-multiSelect> -->

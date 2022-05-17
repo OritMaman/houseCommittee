@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Cities } from 'src/app/classes/cities';
 import { DayarService } from 'src/app/services/dayar.service';
 import { PaymentService } from 'src/app/services/payment.service';
+import Swal from 'sweetalert2';
 import { PaymentsComponent } from '../payments/payments.component';
 
 @Component({
@@ -16,7 +17,7 @@ export class CommitteePaymentsComponent implements OnInit {
   cities: Cities[];
 
   toppings = new FormControl();
-  payFor:string
+  payFor: string
   ngOnInit(): void {
 
 
@@ -29,25 +30,25 @@ export class CommitteePaymentsComponent implements OnInit {
     );
 
   }
-  
-  dayarSelectId:number=0
+
+  dayarSelectId: number = 0
   changeSelect(e) {
     debugger
-    if (e==0)
+    if (e == 0)
       this.dayarSer.listD.forEach(
         x => x.sendMail = (event.target as HTMLInputElement).checked
 
       )
 
   }
-  send(){
-   //  if(this.paymentSer.radioB1==true)
-      this.paymentSer.sendMail(this.dayarSer.listD,this.payFor).subscribe(
-        data=>{
-          if(data==null)
-          alert("problem")
-        },err=>{alert(err)})
-      
-    
+  send() {
+    //  if(this.paymentSer.radioB1==true)
+    this.paymentSer.sendMail(this.dayarSer.listD, this.payFor).subscribe(
+      data => {
+        if (data == null)
+          Swal.fire('', "ארעה שגיאה בהבאת הנתונים", 'error');
+      }, err => { Swal.fire('', err.message, 'error') })
+
+
   }
 }

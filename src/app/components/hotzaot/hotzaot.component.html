@@ -1,7 +1,9 @@
-<p>hotzaot works!</p>
-<label for="Hotzaot">:הוצאות</label><br/> 
-<input class="input" #Hotzaot="ngModel" id="Hotzaot" name="Hotzaot" type="number" required [(ngModel)]="hotzaot"/>  
- 
- <br/>
- <button (click)="save()">שמור</button>
- <button (click)="back()">חזרה</button>
+<main class="form-wrapper">
+    <h1 for="Hachnasot">הוצאות</h1><br />
+    <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
+    <input class="input" #Hotzaot="ngModel" id="Hotzaot" name="Hotzaot" type="number" required [(ngModel)]="hotzaot" />
+    <div class="row"></div>
+    <br />
+    <button (click)="save()">שמור</button>
+</main>
+<!-- <button (click)="back()">חזרה</button> -->

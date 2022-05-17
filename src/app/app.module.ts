@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewCommitteeComponent } from './components/newCommittee/newCommittee.component';
@@ -31,7 +31,7 @@ import { CreatingSurveyComponent } from './components/creating-survey/creating-s
 import { EnterTheSurveyComponent } from './components/enter-the-survey/enter-the-survey.component';
 import { ResultsComponent } from './components/results/results.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from "@angular/common";
 import { AddFaultComponent } from './components/add-fault/add-fault.component';
 
@@ -39,15 +39,21 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MonthlyPaymentComponent } from './components/monthly-payment/monthly-payment.component';
 import { OneTimePaymentComponent } from './components/one-time-payment/one-time-payment.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { HachnasotComponent } from './components/hachnasot/hachnasot.component';
 import { HotzaotComponent } from './components/hotzaot/hotzaot.component';
 import { SendReminderComponent } from './components/send-reminder/send-reminder.component';
 import { PasswordChangeComponent } from './components/password-change/password-change.component';
 import { ResponseSurveyComponent } from './components/response-survey/response-survey.component';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
-//import { JwPaginationModule } from 'jw-angular-pagination';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,15 +91,15 @@ import { ResponseSurveyComponent } from './components/response-survey/response-s
     SendReminderComponent,
     PasswordChangeComponent,
     ResponseSurveyComponent
-   
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, ReactiveFormsModule,
-   HttpClientModule,
-   MatInputModule, 
+    HttpClientModule,
+    MatInputModule,
     BrowserAnimationsModule,
     CommonModule,
     BrowserModule,
@@ -101,12 +107,19 @@ import { ResponseSurveyComponent } from './components/response-survey/response-s
     
     MatDatepickerModule,       
     MatNativeDateModule,
-    MatSelectModule
-    // Ng2SearchPipeModule        
-   
+    MatSelectModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatProgressBarModule,
+    MatIconModule,
+    MatSidenavModule,
+    ChartsModule, MatRadioModule,
+    MatCheckboxModule
   ],
-  
+
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

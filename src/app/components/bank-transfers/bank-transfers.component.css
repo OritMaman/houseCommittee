@@ -1,0 +1,10 @@
+.form-wrapper p {
+    direction: ltr;
+    font-size: 14px;
+    line-height: 24px;
+    color: #8d8d8d;
+    margin: 10px 0;
+}
+.row-wrapper {
+    flex-flow: row !important;
+}

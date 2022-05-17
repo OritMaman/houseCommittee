@@ -1,45 +1,61 @@
+<form class="backgroundcolor form-wrapper">
+    <h1>חבר ועד? הירשם חינם!</h1>
+    <h3>והתחילו לנהל את הבניין שלכם בצורה יעילה וחכמה.</h3>
+    <div class="row-wrapper">
+        <input class="input" #firstName=ngModel id="firstName" name="firstName" type="string" required
+            [(ngModel)]="dayar.FirstName" />
+        <label for="firstName"> שם פרטי</label>
 
-<form class="backgroundcolor">
-<h1>!חבר ועד? הירשם חינם</h1>
-<h2>.והתחילו לנהל את הבניין שלכם בצורה יעילה וחכמה</h2>
+        <div class="red error" [hidden]="firstName.valid || firstName.pristine">שדה חובה*</div>
+    </div>
+    <div class="row-wrapper">
 
-    <input class="input" #firstName=ngModel id="firstName" name="firstName" type="string" required [(ngModel)]="dayar.FirstName"/> 
-    <label for="firstName"> :שם פרטי</label>
-    <div class="red" [hidden]="firstName.valid || firstName.pristine">שדה חובה*</div>
-    <br/><br/>
-    <input class="input" #lastName=ngModel id="lastName" name="lastName" type="string" required [(ngModel)]="dayar.LastName"/> 
-    <label for="lastName"> :שם משפחה</label>
-    <div class="red" [hidden]="lastName.valid || lastName.pristine">שדה חובה*</div>
-    <br/><br/>
-    <input class="input" #email=ngModel id="email" name="email" type="any" required [(ngModel)]="dayar.MailAddress"/> <!--any לבדוק-->
-    <label for="email"> :אימייל</label>
-    <div class="red" [hidden]="email.valid || email.pristine">שדה חובה*</div>
-    <br/><br/>
-    <input class="input" #phone=ngModel id="phone" name="phone" type="string" required [(ngModel)]="dayar.Phone"/> 
-    <label for="phone"> :טלפון</label>
-    <div class="red" [hidden]="phone.valid || phone.pristine">שדה חובה*</div>
-    <br/><br/>
-    <input class="input" #flatHC=ngModel id="flatHC" name="flatHC" type="number" required [(ngModel)]="dayar.NumFlat"/> 
-    <label for="flatHC"> :מספר דירה</label>
-    <div class="red" [hidden]="flatHC.valid || flatHC.pristine">שדה חובה*</div>
-    <br/><br/>
-    <input type="password" class="input" #code=ngModel id="code" name="code" type="string" required [(ngModel)]="dayar.PsWord"/> 
-    <label for="code"> :סיסמה</label>
-    <div class="red" [hidden]="code.valid || code.pristine">שדה חובה*</div>
-    <br/><br/>
-    <input type="password" class="input" #verifyCode="ngModel" id="verifyCode" name="verifyCode" type="string" required [(ngModel)]="verifyCode1"/> 
-     <label for="verifyCode"> :ווידוא סיסמה</label>
-    <div class="red" [hidden]="verifyCode.valid || verifyCode.pristine">שדה חובה*</div>
-    <br/><br/>
-   <!-- <input class="input" #numOfFlats=ngModel id="numOfFlats" name="numOfFlats" type="number" required [(ngModel)]="dayar.numOfFlats"/>  -->
-    <!-- <label for="numOfFlats"> :מספר דירות</label>
-    <div class="red" [hidden]="numOfFlats.valid || numOfFlats.pristine">שדה חובה*</div>
+        <input class="input" #lastName=ngModel id="lastName" name="lastName" type="string" required
+            [(ngModel)]="dayar.LastName" />
+        <label for="lastName"> שם משפחה</label>
+        <div class="red error" [hidden]="lastName.valid || lastName.pristine">שדה חובה*</div>
+    </div>
+    <div class="row-wrapper">
+        <input class="input" #email=ngModel id="email" name="email" type="any" required
+            [(ngModel)]="dayar.MailAddress" />
+        <!--any לבדוק-->
+        <label for="email"> אימייל</label>
+        <div class="red error" [hidden]="email.valid || email.pristine">שדה חובה*</div>
+    </div>
+    <div class="row-wrapper">
+        <input class="input" #phone=ngModel id="phone" name="phone" type="string" required [(ngModel)]="dayar.Phone" />
+        <label for="phone"> טלפון</label>
+        <div class="red error" [hidden]="phone.valid || phone.pristine">שדה חובה*</div>
+    </div>
+    <div class="row-wrapper">
+        <input class="input" #flatHC=ngModel id="flatHC" name="flatHC" type="number" required
+            [(ngModel)]="dayar.NumFlat" />
+        <label for="flatHC">  דירה</label>
+        <div class="red error" [hidden]="flatHC.valid || flatHC.pristine">שדה חובה*</div>
+    </div>
+    <div class="row-wrapper">
+        <input type="password" class="input" #code=ngModel id="code" name="code" type="string" required
+            [(ngModel)]="dayar.PsWord" />
+        <label for="code"> סיסמה</label>
+        <div class="red error" [hidden]="code.valid || code.pristine">שדה חובה*</div>
+    </div>
+    <div class="row-wrapper">
+        <input type="password" class="input" #verifyCode="ngModel" id="verifyCode" name="verifyCode" type="string"
+            required [(ngModel)]="verifyCode1" />
+        <label for="verifyCode">  סיסמה שוב</label>
+        <div class="red error" [hidden]="verifyCode.valid || verifyCode.pristine">שדה חובה*</div>
+    </div>
+
+    <!-- <input class="input" #numOfFlats=ngModel id="numOfFlats" name="numOfFlats" type="number" required [(ngModel)]="dayar.numOfFlats"/>  -->
+    <!-- <label for="numOfFlats"> מספר דירות</label>
+    <div class="red error" [hidden]="numOfFlats.valid || numOfFlats.pristine">שדה חובה*</div>
     <br/><br/>
     <input class="input" #numaOfFloor=ngModel id="numaOfFloor" name="numaOfFloor" type="number" required [(ngModel)]="dayar.numaOfFloor"/>  -->
-    <!-- <label for="numaOfFloor"> :מספר הדירה שלי</label>
-    <div class="red" [hidden]="numaOfFloor.valid || numaOfFloor.pristine">שדה חובה*</div>
+    <!-- <label for="numaOfFloor"> מספר הדירה שלי</label>
+    <div class="red error" [hidden]="numaOfFloor.valid || numaOfFloor.pristine">שדה חובה*</div>
     <br/><br/> -->
-<button class="buttons" (click)="begain()">!התחל</button><!--routerLink="/headCommittee" -->
+    <button class="buttons" (click)="begain()">!התחל</button>
+    <!--routerLink="/headCommittee" -->
 
 
 </form>

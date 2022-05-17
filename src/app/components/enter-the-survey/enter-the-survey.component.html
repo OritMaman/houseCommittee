@@ -1,27 +1,66 @@
-<h1>{{survey.SubSurvey}}</h1>
+<div class="form-wrapper">
+    <h1>{{survey.SubSurvey}}</h1>
+    <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
+    <br>
+    <div *ngIf="survey.Type=='טקסט חופשי'">
+       
+        <h4>כתוב את תשובתך</h4>
+        <input class="input" type="text" size="30" width="30" [(ngModel)]="respose.ResponseDescription" />
+    </div>
+    <div *ngIf="survey.Type=='בחירה ייחודית'">
+        <h4>בחר תשובה אחת</h4>
+        <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="surveysSer.radioB">
+        <mat-radio-button class="example-radio-button"  checked="true" [value]="1">
+          {{this.survey.Op1}}
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button"  [value]="2">
+            {{this.survey.Op2}}
+          </mat-radio-button>
+          <mat-radio-button  *ngIf="survey.NumOp >= 1" class="example-radio-button"  [value]="3">
+            {{this.survey.Op3}}
+          </mat-radio-button>
+          <mat-radio-button  *ngIf="survey.NumOp >= 2" class="example-radio-button"  [value]="4">
+            {{this.survey.Op4}}
+          </mat-radio-button>
+          <mat-radio-button  *ngIf="survey.NumOp >= 3" class="example-radio-button"  [value]="5">
+            {{this.survey.Op5}}
+          </mat-radio-button>
+          <mat-radio-button  *ngIf="survey.NumOp >= 4" class="example-radio-button"  [value]="6">
+            {{this.survey.Op6}}
+          </mat-radio-button>
+      </mat-radio-group>
 
-<div *ngIf="survey.Type=='טקסט חופשי'">
-    <h3>כתוב את תשובתך</h3>
-    <input type="text" size="30" width="30" [(ngModel)]="respose.ResponseDescription"/>
-</div>
-<div *ngIf="survey.Type=='בחירה ייחודית'">   
-    <h3>בחר תשובה אחת</h3>
 
-<!-- <button class="buttons" onclick="funOp1(this.survey.Op1)" >{{this.survey.Op1}}</button><br>
+        <!-- <button class="buttons" onclick="funOp1(this.survey.Op1)" >{{this.survey.Op1}}</button><br>
 <button class="buttons" onclick="funOp2(this.survey.Op2)">{{this.survey.Op2}}</button> -->
-{{this.survey.Op1}} <input type="radio" name="radio1" checked [value]="1" [(ngModel)]="surveysSer.radioB"/><br>
-{{this.survey.Op2}} <input type="radio" name="radio1" [value]="2" [(ngModel)]="surveysSer.radioB"/><br>
+         <!-- <mat-radio-button checked [value]="1" [(ngModel)]="surveysSer.radioB" >{{this.survey.Op1}}
+        </mat-radio-button><br> -->
+        
+        <!-- <input type="radio" name="radio1" checked [value]="1" [(ngModel)]="surveysSer.radioB" /><br> -->
+      <!-- <mat-radio-button checked [value]="2" [(ngModel)]="surveysSer.radioB" >
+        </mat-radio-button>   {{this.survey.Op2}}<br> -->
+        
+        <!-- <input type="radio" name="radio1" [value]="2" [(ngModel)]="surveysSer.radioB" /><br> -->
 
-<div *ngIf="survey.NumOp >= 1">{{this.survey.Op3}} <input type="radio" name="radio1" [value]="3" [(ngModel)]="surveysSer.radioB"/></div>
-<div *ngIf="survey.NumOp >= 2">{{this.survey.Op4}} <input type="radio" name="radio1" [value]="4" [(ngModel)]="surveysSer.radioB"/></div>
-<div *ngIf="survey.NumOp >= 3">{{this.survey.Op5}} <input type="radio" name="radio1" [value]="5" [(ngModel)]="surveysSer.radioB"/></div>
-<div *ngIf="survey.NumOp >= 4">{{this.survey.Op6}} <input type="radio" name="radio1" [value]="6" [(ngModel)]="surveysSer.radioB"/></div>
+        <!-- <div *ngIf="survey.NumOp >= 1">{{this.survey.Op3}} 
+            <input type="radio" name="radio1" [value]="3"
+                [(ngModel)]="surveysSer.radioB" /></div>
+        <div *ngIf="survey.NumOp >= 2">{{this.survey.Op4}} <input type="radio" name="radio1" [value]="4"
+                [(ngModel)]="surveysSer.radioB" /></div>
+        <div *ngIf="survey.NumOp >= 3">{{this.survey.Op5}} <input type="radio" name="radio1" [value]="5"
+                [(ngModel)]="surveysSer.radioB" /></div>
+        <div *ngIf="survey.NumOp >= 4">{{this.survey.Op6}} <input type="radio" name="radio1" [value]="6"
+                [(ngModel)]="surveysSer.radioB" /></div>
+ -->
 
-
-<!-- <button type="radio" name="radio1" checked [value]="true" [(ngModel)]="surveysSer.radioB">{{this.surveysSer.surveysToEnter.Op1}}</button>
+        <!-- <button type="radio" name="radio1" checked [value]="true" [(ngModel)]="surveysSer.radioB">{{this.surveysSer.surveysToEnter.Op1}}</button>
 <button type="radio" name="radio1" [value]="false" [(ngModel)]="surveysSer.radioB">{{this.surveysSer.surveysToEnter.Op2}}</button> -->
+    </div>
+    <br>
+    <button (click)="save()">שמור בחירה</button>
+
+
 </div>
-<button (click)="back()">חזרה</button>
-<button (click)="save()">שמור בחירה</button>
-
-

@@ -19,3 +19,8 @@
   .topic{
     text-align: center;
   }
+  .row *{
+    width: 170px!important;
+    margin: 3px;
+    min-width: 170px;
+  }

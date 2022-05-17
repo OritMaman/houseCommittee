@@ -1,31 +1,42 @@
+<form class="form-wrapper" #dayarDetails="ngForm">
+  <h2> פרטי דייר - דירה {{dayar.NumFlat}}</h2>
+  <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
+  <div class="row-wrapper">
+    <label for="FirstName">שם פרטי</label>
+    <input placeholder="{{dayar.NumFlat}} - דירה" class="input" #FirstName="ngModel" id="FirstName" name="FirstName"
+      type="string" required [(ngModel)]="dayar.FirstName" />
 
+  </div>
+  <div class="row-wrapper">
 
-  <h2>{{dayar.NumFlat}} פרטי דייר - דירה</h2>
-<form #dayarDetails="ngForm"> 
- 
-<label for="FirstName">:שם פרטי</label><br/> 
-<input placeholder="{{dayar.NumFlat}} - דירה" class="input" #FirstName="ngModel" id="FirstName" name="FirstName" type="string" required [(ngModel)]="dayar.FirstName"/>  
- 
- <br/>
- <label for="LastName">: שם משפחה</label><br/> 
-<input class="input" #LastName="ngModel" id="LastName" name="LastName" type="string" required [(ngModel)]="dayar.LastName"/> 
+    <label for="LastName"> שם משפחה</label><br />
+    <input class="input" #LastName="ngModel" id="LastName" name="LastName" type="string" required
+      [(ngModel)]="dayar.LastName" />
 
-<br/>
- <label for="NumFlat">: דירה</label><br/> 
-<input class="input" #NumFlat="ngModel" id="NumFlat" name="NumFlat" type="string" disabled required [(ngModel)]="dayar.NumFlat"/>  
- 
- <br/>
- <label for="Phone">: טלפון</label><br/>
- <input class="input" #Phone="ngModel" id="Phone" name="Phone" type="string" required [(ngModel)]="dayar.Phone"/>        
- <br/>
- <label for="MailAddress">: דוא"ל</label><br/>
- <input class="input" #MailAddress="ngModel" id="MailAddress" name="MailAddress" type="string" required [(ngModel)]="dayar.MailAddress"/>        
- <br/>
-<label for="SumToMonth">: חשבון חודשי</label><br/>
- <input class="input" #SumToMonth="ngModel" id="SumToMonth" name="SumToMonth" type="number" required [(ngModel)]="dayar.SumToMonth"/> 
- <br/>
-</form >
+  </div>
+  <div class="row-wrapper">
+    <label for="NumFlat"> דירה</label><br />
+    <input class="input" #NumFlat="ngModel" id="NumFlat" name="NumFlat" type="string" disabled required
+      [(ngModel)]="dayar.NumFlat" />
 
- <br/>
+  </div>
+  <div class="row-wrapper">
+    <label for="Phone"> טלפון</label><br />
+    <input class="input" #Phone="ngModel" id="Phone" name="Phone" type="string" required [(ngModel)]="dayar.Phone" />
+  </div>
+  <div class="row-wrapper">
+    <label for="MailAddress"> דוא"ל</label><br />
+    <input class="input" #MailAddress="ngModel" id="MailAddress" name="MailAddress" type="string" required
+      [(ngModel)]="dayar.MailAddress" />
+  </div>
+  <div class="row-wrapper">
+    <label for="SumToMonth"> חשבון חודשי</label><br />
+    <input class="input" #SumToMonth="ngModel" id="SumToMonth" name="SumToMonth" type="number" required
+      [(ngModel)]="dayar.SumToMonth" />
+  </div>
+
   <button (click)="save()">שמור</button>
-  <button (click)="back()">חזרה</button>
+  <!-- <button >חזרה</button> -->
+</form>
+
+<br />

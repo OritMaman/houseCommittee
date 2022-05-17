@@ -1,0 +1,11 @@
+.mat-h3, .mat-subheading-2,  h3{
+    margin: 6px;
+    color: #5b5b5b;
+    direction: ltr;
+}
+li{
+    font-size: 14px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}

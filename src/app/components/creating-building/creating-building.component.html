@@ -1,56 +1,78 @@
-
-
-<div class="center">
+<div class="center form-wrapper">
   <h1>אשף יצירת בניין חדש</h1>
-   <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין </a><!--<a routerLink="/headCommittee/dayarDetails" (click)="next()"> > פרטי דיירים > </a> -->
+  <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין </a>
+  <!--<a routerLink="/headCommittee/dayarDetails" (click)="next()"> > פרטי דיירים > </a> -->
   <a routerLink="/headCommittee/bankAccount">חשבון בנק</a>
-    <h2>כתובת הבניין</h2>
-<form >
-       <label for="city">: עיר</label><br/> 
-       <!--<input class="input" #city=ngModel id="city" name="city" type="string" required [(ngModel)]="building.city"/>  
-        <div [hidden]="city.valid || city.pristine">שדה חובה*</div>
-       citiesSer -->
+  <h3>כתובת הבניין</h3>
+  <form>
+    <div class="row-wrapper">
+      <label for="city"> עיר</label>
       <select id="city" name="listOfCities" [(ngModel)]="building.CityId">
         <option value="0" disabled>בחר עיר</option>
-          <option *ngFor="let city of listOfCities" [ngValue]="city.CityId"> {{city.CityName}}</option>
-      </select >
-      <br/>
-        <label for="Street">: רחוב</label><br/>
-        <input class="input" #Street=ngModel id="Street" name="Street" type="string" required [(ngModel)]="building.Street"/> 
-        <div [hidden]="Street.valid || Street.pristine">שדה חובה*</div>
-        <br/>
-        <label for="NumBuilding">: מספר בניין</label><br/>
-        <input class="input" #NumBuilding=ngModel id="NumBuilding" name="NumBuilding" type="number" required [(ngModel)]="building.NumBuilding"/>        
-        <div [hidden]="NumBuilding.valid || NumBuilding.pristine">שדה חובה*</div>
-        <br/>
-        
-        <!-- <label for="entry">: כניסה</label><br/>
+        <option *ngFor="let city of listOfCities" [ngValue]="city.CityId"> {{city.CityName}}</option>
+      </select>
+    </div>
+
+    <div class="row-wrapper">
+
+      <label for="Street"> רחוב</label>
+      <input class="input" #Street=ngModel id="Street" name="Street" type="string" required
+        [(ngModel)]="building.Street" />
+      <div [hidden]="Street.valid || Street.pristine">שדה חובה*</div>
+    </div>
+
+    <div class="row-wrapper">
+
+      <label for="NumBuilding"> מספר בניין</label>
+      <input class="input" #NumBuilding=ngModel id="NumBuilding" name="NumBuilding" type="number" required
+        [(ngModel)]="building.NumBuilding" />
+      <div [hidden]="NumBuilding.valid || NumBuilding.pristine">שדה חובה*</div>
+    </div>
+
+
+
+    <!-- <label for="entry"> כניסה</label><br/>
         <input class="input" #entry=ngModel id="entry" name="entry" type="string" required [(ngModel)]="building.entry"/> 
         
        <div [hidden]="entry.valid || entry.pristine">שדה חובה*</div>-->
-       
-    
-   
-    <h2>פרטי הבניין</h2>
-    <label for="Floors">: מספר קומות</label><br/>
-        <input class="input" #Floors="ngModel" id="Floors" name="Floors" type="number" required [(ngModel)]="building.Floors"/>        
-        <div [hidden]="Floors.valid || Floors.pristine">שדה חובה*</div>
-        <br/>
-        <label for="Flats">: מספר דירות</label><br/>
-        <input class="input" #Flats="ngModel" id="Flats" name="Flats" type="number" required [(ngModel)]="buildingSer.numFlats"/>        
-        <div [hidden]="Flats.valid || Flats.pristine">שדה חובה*</div>
-        <br>
-      
-      <br>
-      <h2>תשלום לועד</h2>
-      ?תשלומי ועד הבית זהים בין כל הדיירים <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="buildingSer.radioB1"><br>
-      <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
-        <div *ngIf="buildingSer.radioB1">
-          <input type="number" size="" [(ngModel)]="buildingSer.sumClali" name="sum">: תשלום חודשי<br>
-        </div>
 
-    תשלום לפי גודל דירה (עפ"י החלטת הועד)<input type="radio" name="radio1" [value]="false" [(ngModel)]="buildingSer.radioB1">
+
+
+    <h3>פרטי הבניין</h3>
+
+    <div class="row-wrapper">
+
+      <label for="Floors"> מספר קומות</label>
+      <input class="input" #Floors="ngModel" id="Floors" name="Floors" type="number" required
+        [(ngModel)]="building.Floors" />
+      <div [hidden]="Floors.valid || Floors.pristine">שדה חובה*</div>
+    </div>
+
+    <div class="row-wrapper">
+
+      <label for="Flats"> מספר דירות</label>
+      <input class="input" #Flats="ngModel" id="Flats" name="Flats" type="number" required
+        [(ngModel)]="buildingSer.numFlats" />
+      <div [hidden]="Flats.valid || Flats.pristine">שדה חובה*</div>
+    </div>
+
+
+
+
+    <h3>תשלום לועד</h3>
+    <div style="direction: ltr;">
+      <label> ?תשלומי ועד הבית זהים בין הדיירים</label>
+      <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="buildingSer.radioB1">
+    </div>
+    <br>
+    <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
+    <div *ngIf="buildingSer.radioB1" class="row-wrapper">
+      <label for="sum"> סכום חודשי</label>
+      <input type="number" size="" class="input" [(ngModel)]="buildingSer.sumClali" name="sum">
+    </div>
+
+    תשלום לפי גודל דירה (עפ"י החלטת הועד)<input type="radio" name="radio1" [value]="false"
+      [(ngModel)]="buildingSer.radioB1">
   </form>
-  </div>
   <button class="buttons" (click)="next()">הבא</button><!-- routerLink="/headCommittee/dayarDetails"-->
- 
+</div>

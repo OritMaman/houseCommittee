@@ -1,7 +1,9 @@
-<div class="center">
+<div class="center form-wrapper">
     <h1>אשף יצירת בניין חדש</h1>
-      <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a><!-- <a routerLink="/headCommittee/dayarDetails"> > פרטי דיירים > </a> -->
-      <a routerLink="/headCommittee/bankAccount">חשבון בנק</a>
+    <mat-icon class="icon-back" routerLink="/headCommittee/dayarDetails">arrow_back_ios</mat-icon>
+    <a routerLink="/headCommittee/creatingBuilding">הגדרת בניין</a> &nbsp;
+    <!-- <a routerLink="/headCommittee/dayarDetails"> > פרטי דיירים > </a> -->
+    <a routerLink="/headCommittee/bankAccount">חשבון בנק</a>
     <!--constructor(public BankAccountId?:number,public NameOfAccountHolder?:string,public NameBank?:string,public NumSnif?:number,
         public NumAccount?:number,public YeteraOnOpen?:number,   
         public BuildingId?:number,public DayarId?:number
@@ -9,26 +11,39 @@
     -->
     <h2>פרטי חשבון בנק הוועד</h2>
     <p>על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו את פרטי חשבון בנק הוועד</p>
-    <form > 
-        <label for="firstName">: שם בעל החשבון</label><br/> 
-        <input class="input"  id="firstName" #FirstName=ngModel name="FirstName"  type="string" required  [(ngModel)]="bankTransfers.NameOfAccountHolder"/>  
-         <br/>
-         <label for="bankName">: שם הבנק</label><br/> 
-        <input class="input"  id="bankName" #BankName=ngModel name="BankName"  type="string" required  [(ngModel)]="bankTransfers.NameBank"/>  
-         <br/>
-         <label for="snifName">: מספר הסניף</label><br/> 
-        <input class="input"  id="snifName" #SnifName=ngModel name="SnifName"  type="string" required  [(ngModel)]="bankTransfers.NumSnif"/>  
-         <br/>
-         <label for="numCount">: מספר חשבון</label><br/> 
-        <input class="input"  id="numCount" #NumCount=ngModel name="NumCount"  type="string" required  [(ngModel)]="bankTransfers.NumAccount"/>  
-         <br/>
-         <label for="yetera">: יתרת פתיחה</label><br/> 
-        <input class="input"  id="yetera" #Yetera=ngModel name="Yetera"  type="string" required  [(ngModel)]="bankTransfers.YeteraOnOpen"/>  
-         <br/>
-        
-         <p>העלה תעודה מזהה🔗   </p><p>  העלה מסמך🔗</p> 
-         
+    <form>
+        <div class="row-wrapper">
+            <label for="firstName"> בעלי החשבון </label><br />
+            <input class="input" id="firstName" #FirstName=ngModel name="FirstName" type="string" required
+                [(ngModel)]="bankTransfers.NameOfAccountHolder" />
+        </div>
+        <div class="row-wrapper">
+
+            <label for="bankName"> שם הבנק</label><br />
+            <input class="input" id="bankName" #BankName=ngModel name="BankName" type="string" required
+                [(ngModel)]="bankTransfers.NameBank" />
+        </div>
+        <div class="row-wrapper">
+            <label for="snifName"> מספר הסניף</label><br />
+            <input class="input" id="snifName" #SnifName=ngModel name="SnifName" type="number" required
+                [(ngModel)]="bankTransfers.NumSnif" />
+        </div>
+        <div class="row-wrapper">
+            <label for="numCount"> מספר חשבון</label><br />
+            <input class="input" id="numCount" #NumCount=ngModel name="NumCount" type="number" required
+                [(ngModel)]="bankTransfers.NumAccount" />
+        </div>
+        <div class="row-wrapper">
+            <label for="yetera"> יתרת פתיחה</label><br />
+            <input class="input" id="yetera" #Yetera=ngModel name="Yetera" type="number" required
+                [(ngModel)]="bankTransfers.YeteraOnOpen" />
+        </div>
+
+        <p>העלה תעודה מזהה🔗 </p>
+        <p> העלה מסמך🔗</p>
     </form>
+    <div class="footer-wrapper">
+        <button class="buttons" (click)="next()" routerLink="/headCommittee/deshbord">הבא</button>
+        <!-- <button class="buttons-nocolor" routerLink="/headCommittee/dayarDetails">חזור</button> -->
+    </div>
 </div>
-<button class="buttons" (click)="next()" routerLink="/headCommittee/deshbord">הבא</button>
-<button class="buttons" routerLink="/headCommittee/dayarDetails">חזור</button>
