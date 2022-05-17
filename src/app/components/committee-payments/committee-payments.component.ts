@@ -42,8 +42,8 @@ export class CommitteePaymentsComponent implements OnInit {
 
   }
   send() {
-    //  if(this.paymentSer.radioB1==true)
-    this.paymentSer.sendMail(this.dayarSer.listD, this.payFor).subscribe(
+    //  if(this.paymentSer.radioB1==true)  , this.payFor
+    this.paymentSer.sendMail(this.dayarSer.listD).subscribe(
       data => {
         if (data == null)
           Swal.fire('', "ארעה שגיאה בהבאת הנתונים", 'error');

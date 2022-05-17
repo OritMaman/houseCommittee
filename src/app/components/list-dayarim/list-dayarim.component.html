@@ -4,10 +4,6 @@
     <input type="text" placeholder="חיפוש דייר..." name="search" (keyup)="onKey($event)" style="min-width:250px"
         class="input" />
     <mat-icon class="icon-search">search</mat-icon>
-    <!-- (keyup)="quickSearch()"
-         | filter: searchValue
-         <input class="buttons" type="button" value="search" (click)="sortByName()"><br>
-   <button (click)="back()">חזור</button>  -->
     <br>
     <div *ngIf="listD1.length!=0">
         <table class="table">
@@ -33,31 +29,6 @@
             </thead>
         </table>
     </div>
-    <div *ngIf="listD1.length==0">
-        <table class="table">
-            <thead>
-                <tr *ngIf="dayarSer.dayar.IsHouseCommittee" class="th">
-                    <th class="topic" *ngFor="let topic of topics"> {{topic}} </th>
-                </tr>
-                <tr *ngIf="!dayarSer.dayar.IsHouseCommittee" class="th">
-                    <th class="topic" *ngFor="let topic2 of topics2"> {{topic2}} </th>
-                </tr>
-
-                <tr class="td" *ngFor="let Dayar of dayarSer.listD">
-                    <td *ngIf="dayarSer.dayar.IsHouseCommittee"><button (click)="edit(Dayar)">✍🏻</button></td>
-                    <td *ngIf="dayarSer.dayar.IsHouseCommittee">₪{{Dayar.SumToMonth}}</td>
-                    <td>{{Dayar.MailAddress}}</td>
-                    <td>{{Dayar.Phone}}</td>
-                    <td>דירה {{Dayar.NumFlat}}</td>
-                    <td>{{Dayar.LastName}}</td>
-                    <td *ngIf="!Dayar.FirstName">דירה - {{Dayar.NumFlat}}</td>
-                    <td>{{Dayar.FirstName}}</td>
-
-                </tr>
-            </thead>
-        </table>
-    </div>
-</div>
 <div *ngIf="listD1.length==0">
     <table class="table">
         <thead>

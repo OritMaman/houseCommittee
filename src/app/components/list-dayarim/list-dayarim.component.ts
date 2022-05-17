@@ -5,7 +5,7 @@ import { BuildingService } from 'src/app/services/building.service';
 import { DayarService } from 'src/app/services/dayar.service';
 import Swal from 'sweetalert2';
 import { Dayar } from '../../classes/dayar';
-//import { MatPaginator } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-list-dayarim',
@@ -32,7 +32,7 @@ export class ListDayarimComponent implements OnInit {
 
   ngOnInit(): void {
     this.getList();
-
+debugger
   }
   getList(): void {
     this.dayarSer.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(
