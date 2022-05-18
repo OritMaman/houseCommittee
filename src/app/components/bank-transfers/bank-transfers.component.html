@@ -1,47 +1,48 @@
 <div class="form-wrapper">
-    <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
+   <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
     <h1>פרטי חשבון בנק הוועד</h1>
     <p *ngIf="dayarSer.dayar.IsHouseCommittee">על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו או ערכו את
         פרטי חשבון בנק הוועד</p>
+
     <div *ngIf="isShow==true" style="font-size:14px">
-        שם בעל החשבון {{bankTransfers.NameOfAccountHolder}} <br>
-        שם הבנק {{bankTransfers.NameBank}} <br>
-        מספר הסניף {{bankTransfers.NumSnif}} <br>
-        מספר חשבון {{bankTransfers.NumAccount}} <br>
-        יתרת פתיחה {{bankTransfers.YeteraOnOpen}} <br>
+        שם בעל החשבון: {{bankTransfers.NameOfAccountHolder}} <br>
+        שם הבנק: {{bankTransfers.NameBank}} <br>
+        מספר הסניף: {{bankTransfers.NumSnif}} <br>
+        מספר חשבון: {{bankTransfers.NumAccount}} <br>
+        יתרת פתיחה: {{bankTransfers.YeteraOnOpen}} <br>
         <button *ngIf="dayarSer.dayar.IsHouseCommittee" (click)="show()">עריכת פרטים</button>
     </div>
     <div>
         <form *ngIf="isShow==false">
             <div class="row-wrapper">
-                <label for="firstName"> בעלי החשבון </label><br />
+                <label for="firstName"> בעלי החשבון: </label><br />
                 <input class="input" id="firstName" #FirstName=ngModel name="FirstName" type="string" required
                     [(ngModel)]="bankTransfers.NameOfAccountHolder" />
             </div>
             <div class="row-wrapper">
 
-                <label for="bankName"> שם הבנק</label><br />
+                <label for="bankName"> שם הבנק:</label><br />
                 <input class="input" id="bankName" #BankName=ngModel name="BankName" type="string" required
                     [(ngModel)]="bankTransfers.NameBank" />
             </div>
             <div class="row-wrapper">
-                <label for="snifName"> מספר הסניף</label><br />
+                <label for="snifName"> מספר הסניף:</label><br />
                 <input class="input" id="snifName" #SnifName=ngModel name="SnifName" type="number" required
                     [(ngModel)]="bankTransfers.NumSnif" />
             </div>
             <div class="row-wrapper">
-                <label for="numCount"> מספר חשבון</label><br />
+                <label for="numCount"> מספר חשבון:</label><br />
                 <input class="input" id="numCount" #NumCount=ngModel name="NumCount" type="number" required
                     [(ngModel)]="bankTransfers.NumAccount" />
             </div>
             <div class="row-wrapper">
-                <label for="yetera"> יתרת פתיחה</label><br />
+                <label for="yetera"> יתרת פתיחה:</label><br />
                 <input class="input" id="yetera" #Yetera=ngModel name="Yetera" type="number" required
                     [(ngModel)]="bankTransfers.YeteraOnOpen" />
             </div>
 
-            <p>העלה תעודה מזהה🔗 </p>
-            <p> העלה מסמך🔗</p>
+            <!-- <p>העלה תעודה מזהה🔗 </p>
+            <p> העלה מסמך🔗</p> -->
             <button (click)="save()">שמור פרטים</button>
             <!-- <button (click)="back()">חזור</button> -->
         </form>

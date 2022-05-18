@@ -68,6 +68,7 @@ debugger
           if (d == null)
             Swal.fire('', "מייל זה מופיע במערכת או שאינו חוקי נא הכנס מייל אחר", 'error')
           else {
+            debugger
             this.isShow = true;
             this.dayarSer.listD = d
             // this.r.navigate['/headCommittee/list-dayarim'];

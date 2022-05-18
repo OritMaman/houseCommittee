@@ -16,20 +16,17 @@
     <div id="mySelectOptions" *ngFor="let Dayar of dayarSer.listD">
       <label for="one"><input type="checkbox" [(ngModel)]="Dayar.sendMail" name="asas"
           (change)="changeSelect(Dayar.DayarId)" value="one" />
-        {{Dayar.FirstName}} {{Dayar.LastName}} &nbsp;|&nbsp; {{Dayar.NumFlat}} - דירה מספר <br></label>
+        {{Dayar.FirstName}} {{Dayar.LastName}} &nbsp;|&nbsp;  דירה מספר - {{Dayar.NumFlat}} <br></label>
     </div>
 
-    <label for="paymentFor"> תשלום עבור:</label><br>
-    <input type="text" class="input" id="paymentFor" name="for" [(ngModel)]="payFor"><br><br>
+    
     תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
-    <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
-    <!-- <div *ngIf="paymentSer.radioB1">
-        <p>תאריך</p>
-      </div> -->
     תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
     <div *ngIf="!paymentSer.radioB1">
+      <label for="paymentFor"> תשלום עבור:</label><br>
+    <input type="text" class="input" id="paymentFor" name="for" [(ngModel)]="payFor"><br>
       <label for="sum"> סכום:</label><br>
-      <input type="text" class="input" id="sum" name="sum" [(ngModel)]="sum">
+      <input type="text" class="input" id="sum" name="sum" [(ngModel)]="sum"><br>   
     </div><br><br>
     <button class="buttons" (click)="send()">שלח תזכורת לתשלום</button>
 

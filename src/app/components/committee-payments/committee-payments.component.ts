@@ -18,6 +18,7 @@ export class CommitteePaymentsComponent implements OnInit {
 
   toppings = new FormControl();
   payFor: string
+  sum:number;
   ngOnInit(): void {
 
 
@@ -42,11 +43,17 @@ export class CommitteePaymentsComponent implements OnInit {
 
   }
   send() {
-    //  if(this.paymentSer.radioB1==true)  , this.payFor
-    this.paymentSer.sendMail(this.dayarSer.listD).subscribe(
+     if(this.paymentSer.radioB1==true)
+    { this.payFor="תשלום חודשי"
+     this.sum = 0;}  //, this.payFor
+    this.paymentSer.sendMail(this.dayarSer.listD,this.payFor,this.sum).subscribe(
       data => {
         if (data == null)
           Swal.fire('', "ארעה שגיאה בהבאת הנתונים", 'error');
+        else
+        {Swal.fire('', "ברגעים אלו נשלח לדיירים שבחרת תזכורת ל-  " +  this.payFor, 'success')
+        this.payFor="";
+        this.sum=0;}
       }, err => { Swal.fire('', err.message, 'error') })
 
 

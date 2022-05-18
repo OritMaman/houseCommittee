@@ -41,9 +41,5 @@ SendSurvey(survey:Surveys):Observable<boolean>
 {
   return this.http.post<boolean>(this.url+"SendSurvey",survey)
 }
-// setNumOp(num:number):Observable<number>
-// {
-//   debugger
-//   return this.http.get<number>(this.url+"setNumOp/"+num+"/"+surveyId)
-// }
+
 }
