@@ -26,7 +26,8 @@ export class ListDayarimComponent implements OnInit {
   nameforSearch: any
   index = 0;
   searchValue: any;
-
+  first = 0;
+  rows = 4;
 
   //@ViewChild('paginator') paginator:MatPaginator;
 
@@ -69,6 +70,7 @@ debugger
             Swal.fire('', "מייל זה מופיע במערכת או שאינו חוקי נא הכנס מייל אחר", 'error')
           else {
             debugger
+            Swal.fire('', "הדייר הוסף בהצלחה, ברגעים אלו ממש נשלח מייל לדייר עם קישור לאתר ולהחלפת סיסמה ראשונית", 'success')
             this.isShow = true;
             this.dayarSer.listD = d
             // this.r.navigate['/headCommittee/list-dayarim'];

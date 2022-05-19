@@ -38,7 +38,7 @@ export class NewCommitteeComponent implements OnInit {
               if (data.DayarId == -1)//?
                 Swal.fire('', "מייל זה מופיע כבר במערכת", 'error');
               else {
-                Swal.fire('', "דייר זה הוסף בהצלחה", 'success');
+                // Swal.fire('', "דייר זה הוסף בהצלחה", 'success');
                 this.dayarSer.dayar = data
 
                 this.r.navigate(['/headCommittee']);

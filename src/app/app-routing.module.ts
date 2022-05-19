@@ -42,6 +42,8 @@ const routes: Routes = [
   {path: "password-change/:id", component: PasswordChangeComponent},
   {path: "send-reminder", component: SendReminderComponent},
   {path: "response-survey", component: ResponseSurveyComponent},
+  {path: "enterTheSurvey/:surveyId/:dayarId/:buildingId", component: EnterTheSurveyComponent},
+
   {path: "head-committee", component: HeadCommitteeComponent,children:[
   {path: "", component: DeshbordComponent}
   ]},
@@ -60,16 +62,16 @@ const routes: Routes = [
   {path: "faults", component: FaultsComponent},
   { path: "AddFault", component: AddFaultComponent } ,
   { path: "bank-transfers", component: BankTransfersComponent },
-  {path: "enterTheSurvey/:surveyId", component: EnterTheSurveyComponent}
+  {path: "enterTheSurvey/:surveyId/:dayarId/:buildingId", component: EnterTheSurveyComponent}
 ]
 },
-  
+  ///{{survey.DayarId}}/{{survey.BuildingId}}
   
   {path: "headCommittee", component: HeadCommitteeComponent,children:[
   {path: "", component: HomeCommitteeComponent},
   {path: "creatingBuilding", component: CreatingBuildingComponent},
   {path: "creatingSurvey", component: CreatingSurveyComponent},
-  {path: "enterTheSurvey/:surveyId", component: EnterTheSurveyComponent},
+  {path: "enterTheSurvey/:surveyId/:dayarId/:buildingId", component: EnterTheSurveyComponent},
   {path: "results/:surveyId", component: ResultsComponent},
   {path: "dayarDetails", component: DayarDetailsComponent},
   {path: "bankAccount", component: BankAccountComponent},

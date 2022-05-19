@@ -21,7 +21,7 @@ export class PasswordChangeComponent implements OnInit {
   ngOnInit(): void {
     debugger
     this.route.params.subscribe((paramsFromUrl: Params) => {
-      this.dayarId = paramsFromUrl.dayarId;
+      this.dayarId = paramsFromUrl.id;
       
     });
     debugger
@@ -33,14 +33,14 @@ export class PasswordChangeComponent implements OnInit {
         data => {
           debugger
           if (data != null) {
-            Swal.fire('', "!!הסיסמה שונתה בהצלחה",'success')
-            this.location.back();
-            // this.r.navigate['/home'];
+            Swal.fire('', "!!הסיסמה שונתה בהצלחה",'success')         
+            
           }
         }, err => { console.log(err); })
     }
     else
       Swal.fire('', "ווידוא סיסמה אינו תואם",'error')
+    this.r.navigate(['']);
   }
 
 

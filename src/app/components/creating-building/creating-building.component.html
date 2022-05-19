@@ -64,15 +64,16 @@
       <label> ?תשלומי ועד הבית זהים בין הדיירים</label>
       <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="buildingSer.radioB1">
     </div>
-    <br>
+    
     <!--במקרה שנבחר יציג את תיבת הטקסט הבאה-->
     <div *ngIf="buildingSer.radioB1" class="row-wrapper">
       <label for="sum"> סכום חודשי</label>
       <input type="number" size="" class="input" [(ngModel)]="buildingSer.sumClali" name="sum">
     </div>
-
+    <div style="direction: ltr;">
     תשלום לפי גודל דירה (עפ"י החלטת הועד)<input type="radio" name="radio1" [value]="false"
       [(ngModel)]="buildingSer.radioB1">
+    </div>
   </form>
   <button class="buttons" (click)="next()">הבא</button><!-- routerLink="/headCommittee/dayarDetails"-->
 </div>

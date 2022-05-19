@@ -10,6 +10,7 @@ import { DeshbordService } from 'src/app/services/deshbord.service';
 import { TakalotService } from "src/app/services/takalot.service";
 import { TakalotCategoryService } from "src/app/services/takalotCategory.service";
 import { UrgencyLevelService } from "src/app/services/urgencyLevel.service";
+import Swal from 'sweetalert2';
 
 
 
@@ -99,6 +100,9 @@ this.newTakala.TakalaDescription
     this.newTakala.OpenTakala = 0;
     this.newTakala.BuildingId = this.dayarSer.dayar.BuildingId
     debugger
+    if( this.newTakala.TakalaDescription==undefined)
+        Swal.fire('', "עליך למלא את כל השדות", 'error');
+    else{
     this.TakalotService.AddTakala(this.newTakala).subscribe(
       data => {
         this.r.navigate(['/headCommittee/faults']);
@@ -108,7 +112,7 @@ this.newTakala.TakalaDescription
       err => {
         console.log("try again...:(");
       }
-    )
+    )}
   }
 
 }

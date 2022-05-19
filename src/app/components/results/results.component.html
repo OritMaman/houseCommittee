@@ -1,9 +1,9 @@
 <div class="form-wrapper">
-    <h1>{{survey.SubSurvey}} הצג פירוט</h1>
+    <h1> הצג פירוט ל {{survey.SubSurvey}}</h1>
     
     <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
     <div *ngIf="survey.Type=='טקסט חופשי'">
-       <h3>  דיירים הגיבו <strong>{{this.survey.NumAnswers}}</strong></h3>
+       <h3>{{survey.NumAnswers}} דיירים הגיבו </h3>
         <button (click)="showTheResponses()">לתגובות לחצו כאן</button>
         <div *ngIf="isShow==true">
             <ul>

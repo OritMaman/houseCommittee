@@ -13,34 +13,34 @@
     <p>על מנת שנוכל להפקיד לכם את כספי הוועד שייגבו באשראי אנא מלאו את פרטי חשבון בנק הוועד</p>
     <form>
         <div class="row-wrapper">
-            <label for="firstName"> :בעלי החשבון </label><br />
+            <label for="firstName"> בעלי החשבון: </label><br />
             <input class="input" id="firstName" #FirstName=ngModel name="FirstName" type="string" required
                 [(ngModel)]="bankTransfers.NameOfAccountHolder" />
         </div>
         <div class="row-wrapper">
 
-            <label for="bankName"> :שם הבנק</label><br />
+            <label for="bankName"> שם הבנק: </label><br />
             <input class="input" id="bankName" #BankName=ngModel name="BankName" type="string" required
                 [(ngModel)]="bankTransfers.NameBank" />
         </div>
         <div class="row-wrapper">
-            <label for="snifName"> :מספר הסניף</label><br />
+            <label for="snifName"> מספר הסניף: </label><br />
             <input class="input" id="snifName" #SnifName=ngModel name="SnifName" type="number" required
                 [(ngModel)]="bankTransfers.NumSnif" />
         </div>
         <div class="row-wrapper">
-            <label for="numCount"> :מספר חשבון</label><br />
+            <label for="numCount"> מספר חשבון: </label><br />
             <input class="input" id="numCount" #NumCount=ngModel name="NumCount" type="number" required
                 [(ngModel)]="bankTransfers.NumAccount" />
         </div>
         <div class="row-wrapper">
-            <label for="yetera"> :יתרת פתיחה</label><br />
+            <label for="yetera"> יתרת פתיחה: </label><br />
             <input class="input" id="yetera" #Yetera=ngModel name="Yetera" type="number" required
                 [(ngModel)]="bankTransfers.YeteraOnOpen" />
         </div>
 
-        <p>העלה תעודה מזהה🔗 </p>
-        <p> העלה מסמך🔗</p>
+        <!-- <p>העלה תעודה מזהה🔗 </p>
+        <p> העלה מסמך🔗</p> -->
     </form>
     <div class="footer-wrapper">
         <button class="buttons" (click)="next()" routerLink="/headCommittee/deshbord">הבא</button>

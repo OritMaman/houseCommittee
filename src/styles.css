@@ -149,7 +149,7 @@ mat-sidenav-container {
     background-size: cover;
     top: 0;
     right: 0;
-    opacity: 0.18;
+    opacity: 0.2;
     z-index: -1;
 }
 .form-wrapper label,

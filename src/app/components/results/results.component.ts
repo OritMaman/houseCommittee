@@ -36,7 +36,7 @@ export class ResultsComponent implements OnInit {
     this.responseSer.getAllResponses(this.survey.SurveyId).subscribe(
       data => {
         debugger
-        Swal.fire('', "שליפת ההודעות הוצלחה", 'success');
+       // Swal.fire('', "שליפת ההודעות הוצלחה", 'success');
         this.responseSer.listResponses = data;
         this.isShow = true
       },

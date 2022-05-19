@@ -22,9 +22,9 @@
                 <mat-icon class="mat-set" *ngIf="dayarSer.dayar.IsHouseCommittee"
                     (click)="deleteSurvey(survey.SurveyId,survey.BuildingId)">close</mat-icon>
                 <mat-icon class="mat-set" *ngIf="dayarSer.dayar.IsHouseCommittee"
-                    routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}">transit_enterexit</mat-icon>
+                    routerLink="/headCommittee/enterTheSurvey/{{survey.SurveyId}}/{{survey.DayarId}}/{{survey.BuildingId}}">transit_enterexit</mat-icon>
                 <mat-icon class="mat-set" *ngIf="!dayarSer.dayar.IsHouseCommittee"
-                    routerLink="/dayar/enterTheSurvey/{{survey.SurveyId}}">transit_enterexit</mat-icon>
+                    routerLink="/dayar/enterTheSurvey/{{survey.SurveyId}}/{{survey.DayarId}}/{{survey.BuildingId}}">transit_enterexit</mat-icon>
 
 
 
