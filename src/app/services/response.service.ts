@@ -19,7 +19,8 @@ url="https://localhost:44339/api/Responses/"
 
 AddRespose(r:Responses):Observable<Responses>
 {debugger
-  r.ResponseId=0
+  r.DayarId=Number( r.DayarId)
+  r.SurveyId=Number( r.SurveyId)
   return this.http.post<Responses>(this.url+"AddResponse",r)
 }
 getAllResponses(buildingId:number):Observable<Array<Responses>>
@@ -28,6 +29,8 @@ getAllResponses(buildingId:number):Observable<Array<Responses>>
 }
 EditResponse(response:Responses):Observable<Array<Responses>>
 {debugger
+  response.DayarId=Number(response.DayarId)
+  response.SurveyId=Number(response.SurveyId)
   return this.http.put<Array<Responses>>(this.url+"EditResponse",response)
 }
 CheckDayarRespose(dayarId:number, survey:Surveys):Observable<boolean>

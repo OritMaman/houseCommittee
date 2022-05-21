@@ -4,7 +4,7 @@
     <mat-icon class="icon-back" (click)="back()">arrow_back_ios</mat-icon>
     <div *ngIf="survey.Type=='טקסט חופשי'">
        <h3>{{survey.NumAnswers}} דיירים הגיבו </h3>
-        <button (click)="showTheResponses()">לתגובות לחצו כאן</button>
+        <button *ngIf="dayarSer.dayar.IsHouseCommittee" (click)="showTheResponses()">לתגובות לחצו כאן</button>
         <div *ngIf="isShow==true">
             <ul>
                 <li *ngFor="let r of responseSer.listResponses">

@@ -9,11 +9,18 @@
         
           <li class="nav-item">
             <a class="nav-link" href="#">שלום   {{this.d.dayar.FirstName}} {{this.d.dayar.LastName}}</a>
-          </li>      
+          </li>
+          <!--כניסה לבניין-->     
           <li class="nav-item" *ngIf="dayarSer.dayar.BuildingId!=undefined">
             <a class="nav-link" href="#">{{this.buildingSer.buildingAddress.Street}}
               {{this.buildingSer.buildingAddress.NumBuilding}}<br>
               {{this.city.CityName}}</a>
+          </li>
+          <!--בהרשמה-->
+          <li class="nav-item" *ngIf="dayarSer.dayar.BuildingId!=undefined">
+            <a class="nav-link" href="#">{{this.buildingSer.building.Street}}
+              {{this.buildingSer.building.NumBuilding}}<br>
+              {{this.buildingSer.city.CityName}}</a>
           </li>
         </ul>
       </div>

@@ -19,10 +19,12 @@ CheckDayarResult(dayarId:number,survey:Surveys):Observable<boolean>{
 
 EditResult(surveyResults:SurveyResults):Observable<Array<SurveyResults>>
 {debugger
+  surveyResults.DayarId=Number( surveyResults.DayarId)
   return this.http.put<Array<SurveyResults>>(this.url+"EditResult",surveyResults)
 }
 AddResult(surveyResults:SurveyResults):Observable<SurveyResults>
 {debugger
+  surveyResults.DayarId=Number( surveyResults.DayarId)
   return this.http.post<SurveyResults>(this.url+"AddResult",surveyResults)
 }
 }

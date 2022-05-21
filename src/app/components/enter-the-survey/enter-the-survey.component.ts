@@ -392,8 +392,17 @@ export class EnterTheSurveyComponent implements OnInit {
     debugger
     if (this.survey.Type == 'טקסט חופשי') {
       this.respose.SurveyId = this.survey.SurveyId
+
+      // this.surveyId = paramsFromUrl.surveyId;
+      // this.dayarId = paramsFromUrl.dayarId;
+      // this.buildingId = paramsFromUrl.buildingId;
+      // במקרה שזו תגובה שבאה מהדייר דרך המייל אז יש לנו כאן רק את ה-אי די שלו...
       this.respose.SenderName = this.dayarSer.dayar.FirstName + ' ' + this.dayarSer.dayar.LastName
       this.respose.DayarId = this.dayarSer.dayar.DayarId
+      if(this.respose.DayarId === undefined)
+        { this.respose.DayarId = this.dayarId
+         this.respose.SurveyId = this.surveyId
+        }
       debugger
       this.responseSer.CheckDayarRespose(this.dayarId, this.survey).subscribe(
         data => {
@@ -431,7 +440,7 @@ export class EnterTheSurveyComponent implements OnInit {
                       if (d === null)
                         Swal.fire('', "בעייה בעידכון התגובה", 'error')
                       else {
-                        Swal.fire('', "העידכון עבר בהצלחה", 'success')
+                       // Swal.fire('', "העידכון עבר בהצלחה", 'success')
                         this.responseSer.response = data
                         this.location.back();
                       }

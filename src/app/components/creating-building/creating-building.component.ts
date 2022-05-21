@@ -56,6 +56,11 @@ export class CreatingBuildingComponent implements OnInit {
           Swal.fire('', "בניין זה נוסף בהצלחה", 'success');
           this.buildingSer.building = data
           this.dayarSer.dayar.BuildingId = this.buildingSer.building.BuildingId
+          this.citiesSer.getNameCity(this.building.CityId).subscribe(
+            da => {
+              debugger
+              this.buildingSer.city = da;
+            }, err => { Swal.fire('', err.message, 'error') })
           if (this.buildingSer.radioB1 == false)
             this.buildingSer.sumClali = 0;
           this.dayarSer.dayar.SumToMonth = this.buildingSer.sumClali
@@ -93,6 +98,8 @@ export class CreatingBuildingComponent implements OnInit {
 
       }
 
+      // this.city 
+      // this.buildingSer.buildingAddress
       // },
       //err=>{alert(err)}
     )
