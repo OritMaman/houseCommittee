@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Building } from 'src/app/classes/building';
 import { Cities } from 'src/app/classes/cities';
 import { BuildingService } from 'src/app/services/building.service';
@@ -13,9 +14,12 @@ import Swal from 'sweetalert2';
 })
 export class HeadCommitteeComponent implements OnInit {
 
-  constructor(public d: DayarService, public buildingSer: BuildingService, public dayarSer: DayarService, public citiesSer: CitiesService) { }
+  constructor(public router:Router,public d: DayarService, public buildingSer: BuildingService, public dayarSer: DayarService, public citiesSer: CitiesService) { }
 
   city: Cities = new Cities();
+  logout(){
+    this.router.navigateByUrl('');
+  }
   ngOnInit(): void {
     this.d.dayar.FirstName
     this.d.dayar.LastName

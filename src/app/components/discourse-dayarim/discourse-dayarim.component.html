@@ -10,8 +10,9 @@
     <ul class="col-6">
 
         <li *ngFor="let m of messageSer.listMessages"
-            [ngClass]="{'li-user':dayarSer && dayarSer.dayar.DayarId==m.DayarId}">
+            [ngClass]="{'li-user':dayarSer && (dayarSer.dayar.FirstName + ' ' + dayarSer.dayar.LastName)==m.SenderName}">
             <strong>
+               
                 {{m.MessageContent}}</strong><br>{{m.TimeMessage|date:'dd/MM/yyyy'}}&nbsp;|&nbsp;{{m.TimeMessage|date:'HH:mm'}}&nbsp;|&nbsp;{{m.SenderName}}
 
         </li><br>

@@ -116,8 +116,16 @@ mat-icon {
     border-radius: 50%;
     float: left;
     margin-right: 80px;
+    background: linear-gradient(131deg, #ffd505, #f7f300);
+    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
 }
+.color-red{ background: linear-gradient(131deg, #e63d05, #f0590d)!important;}
+.color-green{  background: linear-gradient(131deg, #22ca00, #03f607)!important;}
 .card-icon-1 {
+    background: linear-gradient(131deg, #059fbe, #0dcaf0);
+    box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
+}
+/* .card-icon-1 {
     background: linear-gradient(131deg, #059fbe, #0dcaf0);
     box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
 }
@@ -132,7 +140,7 @@ mat-icon {
 .card-icon-4 {
     background: linear-gradient(131deg, #ffd505, #f7f300);
     box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
-}
+} */
 .round-wrap,
 .row {
     text-align: center;

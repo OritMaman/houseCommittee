@@ -1,5 +1,5 @@
 
-
+<!-- 
 
 <header>
   <nav class="navbar navbar-expand-lg  fixed-top bg-danger shadow-lg p-3 mb-5 rounded opacity-75">
@@ -10,13 +10,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#">שלום   {{this.d.dayar.FirstName}} {{this.d.dayar.LastName}}</a>
           </li>
-          <!--כניסה לבניין-->     
+           
           <li class="nav-item" *ngIf="dayarSer.dayar.BuildingId!=undefined">
             <a class="nav-link" href="#">{{this.buildingSer.buildingAddress.Street}}
               {{this.buildingSer.buildingAddress.NumBuilding}}<br>
               {{this.city.CityName}}</a>
           </li>
-          <!--בהרשמה-->
+         
           <li class="nav-item" *ngIf="dayarSer.dayar.BuildingId!=undefined">
             <a class="nav-link" href="#">{{this.buildingSer.building.Street}}
               {{this.buildingSer.building.NumBuilding}}<br>
@@ -26,13 +26,28 @@
       </div>
     </div>
   </nav>
-</header>
+</header> -->
 
 
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened mode="side" position="end" class="side-cont-admin">
       <mat-nav-list>
        
+          <a mat-list-item  href="#">שלום   {{this.d.dayar.FirstName}} {{this.d.dayar.LastName}}</a>
+          <mat-icon class="logout" (click)="logout();">login</mat-icon> 
+     
+        <!--כניסה לבניין-->     
+        <a mat-list-item  *ngIf="dayarSer.dayar.BuildingId!=undefined" href="#">{{this.buildingSer.buildingAddress.Street}}
+          {{this.buildingSer.buildingAddress.NumBuilding}}
+          {{this.city.CityName}}</a>
+    
+      <!--בהרשמה-->
+    
+      <a mat-list-item  *ngIf="dayarSer.dayar.BuildingId!=undefined && this.buildingSer.building.Street
+      && this.buildingSer.city.CityName"
+      href="#">{{this.buildingSer.building.Street}}
+          {{this.buildingSer.building.NumBuilding}}
+          {{this.buildingSer.city.CityName}}</a>  <hr>
           <a mat-list-item  routerLink="/headCommittee/deshbord"
          routerLinkActive="active_link">
               <mat-icon>dashboard</mat-icon> &nbsp;דשבורד
@@ -68,7 +83,7 @@
       <div  class="logo">
           
       </div>
-      <div style="height: calc(100vh - 110px);">
+      <div style="height: 100vh;">
          
           <div class="content-div">
               <router-outlet></router-outlet>

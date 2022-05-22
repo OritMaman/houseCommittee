@@ -4,32 +4,38 @@ body {
 }
 
 
-body.mat-typography  .mat-table,
-body.mat-typography  .mat-list-item,
-body.mat-typography  .mat-h1,
-body.mat-typography  .mat-headline,
-body.mat-typography  .mat-typography h1,
-body.mat-typography  .mat-toolbar,
-body.mat-typography  .mat-toolbar h1,
-body.mat-typography  .mat-toolbar h2,
-body.mat-typography  .mat-toolbar h3,
-body.mat-typography  .mat-toolbar h4,
-body.mat-typography  .mat-toolbar h5,
-body.mat-typography  .mat-toolbar h6,
-body.mat-typography  span,
-body.mat-typography  strong,
-body.mat-typography  p,
-body.mat-typography  a,
-body.mat-typography  li,
-body.mat-typography  label,
-body.mat-typography  input,
-body.mat-typography  th,
-body.mat-typography  td,
-body.mat-typography  button,
-body.mat-typography  h1,body.mat-typography  h2,body.mat-typography  h3,body.mat-typography  h4,body.mat-typography  h5,body.mat-typography  h6,
-body.mat-typography  .mat-input-element {
+body.mat-typography .mat-table,
+body.mat-typography .mat-list-item,
+body.mat-typography .mat-h1,
+body.mat-typography .mat-headline,
+body.mat-typography .mat-typography h1,
+body.mat-typography .mat-toolbar,
+body.mat-typography .mat-toolbar h1,
+body.mat-typography .mat-toolbar h2,
+body.mat-typography .mat-toolbar h3,
+body.mat-typography .mat-toolbar h4,
+body.mat-typography .mat-toolbar h5,
+body.mat-typography .mat-toolbar h6,
+body.mat-typography span,
+body.mat-typography strong,
+body.mat-typography p,
+body.mat-typography a,
+body.mat-typography li,
+body.mat-typography label,
+body.mat-typography input,
+body.mat-typography th,
+body.mat-typography td,
+body.mat-typography button,
+body.mat-typography h1,
+body.mat-typography h2,
+body.mat-typography h3,
+body.mat-typography h4,
+body.mat-typography h5,
+body.mat-typography h6,
+body.mat-typography .mat-input-element {
     font-family: "Varela Round", Roboto, "Helvetica Neue", sans-serif;
 }
+
 .buttons {
     background-color: rgb(213, 213, 226);
     border-radius: 5px;
@@ -61,12 +67,13 @@ input {
     font-size: 15px !important;
     direction: rtl;
 }
+
 mat-sidenav-container {
     display: flex;
 }
 
 mat-sidenav {
-    margin-top: 70px;
+    margin-top: 700px;
     width: 220px;
     right: 0 !important;
     box-shadow: 0 16px 38px -12px rgb(155 155 155 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%),
@@ -76,39 +83,58 @@ mat-sidenav {
 
 mat-sidenav-content {
     width: calc(100% - 220px);
-    margin-top: 70px;
+    margin-top: 0;
     left: 0 !important;
     margin-right: 220px !important;
     margin-left: 0;
     padding: 20px;
 }
+
 .mat-drawer-inner-container {
     overflow: hidden !important;
 }
+
 .carousel-caption {
     direction: ltr;
     bottom: 8rem;
 }
+
 mat-sidenav-container {
     display: flex;
 }
+
+[dir=rtl] .mat-drawer.mat-drawer-end {
+    margin: 0;
+    padding: 0;
+}
+
 mat-nav-list {
     display: block;
-    height: calc(100vh - 70px);
+    height: 100vh;
     background-color: #0000006b;
     color: white;
     text-align: right;
     direction: rtl;
     padding-top: 10px;
 }
+
+.logout {
+    position: absolute;
+    top: 15px;
+    right: 180px;
+    cursor: pointer;
+}
+
 a:hover {
     text-decoration: none;
     color: white;
     transition: all 0.2s ease-in-out;
 }
+
 mat-nav-list a:hover {
     font-weight: bold;
 }
+
 mat-nav-list a {
     display: block;
     text-decoration: none;
@@ -118,12 +144,14 @@ mat-nav-list a {
     color: white !important;
     margin: 2px 20px;
 }
+
 mat-nav-list a .mat-icon {
     vertical-align: middle;
     font-size: 20px;
     height: 20px;
     width: 20px;
 }
+
 mat-sidenav-container {
     display: flex;
 }
@@ -140,6 +168,7 @@ mat-sidenav-container {
     width: 250px;
     margin: auto;
 }
+
 .bg {
     background: url("../src/assets/building-7092747_1920.jpg");
     width: 100%;
@@ -152,6 +181,7 @@ mat-sidenav-container {
     opacity: 0.2;
     z-index: -1;
 }
+
 .form-wrapper label,
 mat-cardlabel {
     font-weight: 100;
@@ -238,18 +268,21 @@ mat-cardlabel {
 .mat-select-value {
     color: #ff4081 !important;
 }
+
 .row-wrapper {
     display: flex;
     justify-content: center;
     flex-flow: row-reverse;
     margin-bottom: 12px;
 }
+
 .row-wrapper label {
     min-width: 80px;
     text-align: right;
     font-size: 14px;
 }
-.table > thead > tr > th {
+
+.table>thead>tr>th {
     color: white;
     font-weight: 100;
     font-size: 1.4rem;
@@ -258,7 +291,9 @@ mat-cardlabel {
     text-align: center;
     background-color: #d2232a;
 }
-.input,select {
+
+.input,
+select {
     border-radius: 15px;
     border: 2px solid #d2232a;
     font-size: 14px;
@@ -267,6 +302,7 @@ mat-cardlabel {
     padding: 0 5px;
     min-width: 200px;
 }
+
 .form-wrapper,
 .form-wrapper-100 {
     text-align: center;
@@ -282,11 +318,12 @@ mat-cardlabel {
     min-width: 300px;
     opacity: 0.8;
     height: calc(90% - 124px);
-    top: 5%;
-    background: linear-gradient(#d2232a24, #ffffff00, #d2232a24);
+    top: 5vh;
+    background: linear-gradient(#d2232a6b, #ffffffb3);
     /* border: 2px solid #d2232a; */
     box-shadow: 0 16px 38px -12px rgb(155 155 155 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
 }
+
 .form-wrapper button,
 .form-wrapper button.buttons,
 .buttons,
@@ -314,17 +351,20 @@ mat-cardlabel {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
         box-shadow 0.15s ease-in-out;
 }
-.buttons-nocolor{
+
+.buttons-nocolor {
     color: #dc3545 !important;
-    background-color: #fff  !important;
-    border-color: #dc3545;  
+    background-color: #fff !important;
+    border-color: #dc3545;
 }
+
 .icon-back {
     cursor: pointer;
     position: absolute;
     top: 10px;
     left: 15px;
 }
+
 .mat-icon.mat-add {
     font-size: 36px;
     width: 40px;
@@ -337,6 +377,7 @@ mat-cardlabel {
     border-radius: 50%;
     cursor: pointer;
 }
+
 .mat-icon.mat-add-small {
     font-size: 24px;
     width: 30px;
@@ -369,6 +410,7 @@ mat-cardlabel {
     color: white;
     border-color: white;
 }
+
 .logo {
     background-image: url("../src/assets/logo.png");
     width: 120px;

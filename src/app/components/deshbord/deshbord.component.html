@@ -8,6 +8,25 @@
    <tr><td></td><td></td><td><p>תקלות שנסגרו</p><h2>{{deshbord.TakalotShenisgeru}}</h2></td><td><p>תקלות בטיפול</p><h2>{{deshbord.TakalotBetipul}}</h2></td></tr> 
 </table> -->
     <div class="d-flex row">
+       
+        <div class="card">
+            <div class="card-icon card-icon-2">
+                <mat-icon>attach_money</mat-icon>
+            </div>
+            <p class="title">הכנסות</p>
+            <h2>₪{{deshbord.Hachnasot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee"
+             class="colo-green"   routerLink="/headCommittee/hachnasot">+</button>
+        </div>
+        <!--(click)="editHachnasot(deshbord)"-->
+        <div class="card">
+            <div class="card-icon card-icon-3">
+                <mat-icon>attach_money</mat-icon>
+            </div>
+            <p class="title">הוצאות</p>
+            <h2>₪{{deshbord.Hotzaot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee"
+            class="colo-red"   routerLink="/headCommittee/hotzaot">-</button>
+            <!--(click)="editHotzaot(deshbord)"-->
+        </div>
         <div class="card">
             <div class="card-icon card-icon-4">
                 <mat-icon>attach_money</mat-icon>
@@ -15,25 +34,6 @@
             <p class="title">יתרה לאחר ההוצאות</p>
             <h2>₪{{deshbord.Yetera}}</h2>
         </div>
-        <div class="card">
-            <div class="card-icon card-icon-2">
-                <mat-icon>add</mat-icon>
-            </div>
-            <p class="title">הכנסות</p>
-            <h2>₪{{deshbord.Hachnasot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee"
-                routerLink="/headCommittee/hachnasot">+</button>
-        </div>
-        <!--(click)="editHachnasot(deshbord)"-->
-        <div class="card">
-            <div class="card-icon card-icon-3">
-                <mat-icon>remove</mat-icon>
-            </div>
-            <p class="title">הוצאות</p>
-            <h2>₪{{deshbord.Hotzaot}}</h2><button *ngIf="dayarSer.dayar.IsHouseCommittee"
-                routerLink="/headCommittee/hotzaot">-</button>
-            <!--(click)="editHotzaot(deshbord)"-->
-        </div>
-      
         <div class="card spec-card">
             <div class="card-icon card-icon-1">
                 <mat-icon>money</mat-icon>
