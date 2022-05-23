@@ -3,7 +3,9 @@ body {
     font-family: "Varela Round", sans-serif;
 }
 
-
+tr:nth-child(odd) {
+    background-color: #ffffffa5;
+  }
 body.mat-typography .mat-table,
 body.mat-typography .mat-list-item,
 body.mat-typography .mat-h1,
@@ -178,7 +180,7 @@ mat-sidenav-container {
     background-size: cover;
     top: 0;
     right: 0;
-    opacity: 0.2;
+    opacity: 0.35;
     z-index: -1;
 }
 
@@ -302,7 +304,11 @@ select {
     padding: 0 5px;
     min-width: 200px;
 }
-
+.navbar-expand-lg .navbar-collapse{justify-content: center;}
+.navbar-expand-lg .navbar-collapse
+li{
+    margin: 0 7px;
+}
 .form-wrapper,
 .form-wrapper-100 {
     text-align: center;

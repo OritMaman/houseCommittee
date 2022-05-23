@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Building } from 'src/app/classes/building';
 import { Dayar } from 'src/app/classes/dayar';
 import { Messages } from 'src/app/classes/messages';
@@ -21,6 +22,7 @@ export class DiscourseDayarimComponent implements OnInit {
   ngOnInit(): void {
     this.getList()
   }
+  
   getList(): void {
     this.messageSer.getAllMessages(this.dayarSer.dayar.BuildingId).subscribe(
       data => {

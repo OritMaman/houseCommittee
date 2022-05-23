@@ -6,17 +6,17 @@
   <mat-sidenav #sidenav opened mode="side" position="end" class="side-cont-admin">
       <mat-nav-list>
         <a mat-list-item  href="#">שלום   {{this.d.dayar.FirstName}} {{this.d.dayar.LastName}}</a>
-     
+        <mat-icon class="logout" (click)="logout();">login</mat-icon> 
         <!--כניסה לבניין-->     
     
           <a mat-list-item  *ngIf="dayarSer.dayar.BuildingId!=undefined" href="#">{{this.buildingSer.buildingAddress.Street}}
-            {{this.buildingSer.buildingAddress.NumBuilding}} <br>
+            {{this.buildingSer.buildingAddress.NumBuilding}} 
             {{this.city.CityName}}</a>
       
         <!--בהרשמה-->
       
         <a mat-list-item  *ngIf="dayarSer.dayar.BuildingId!=undefined && this.buildingSer.building"href="#">{{this.buildingSer.building.Street}}
-            {{this.buildingSer.building.NumBuilding}} <br>
+            {{this.buildingSer.building.NumBuilding}} 
             {{this.buildingSer.city.CityName}}</a>  <hr>
           <a mat-list-item  routerLink="/dayar/deshbord"
          routerLinkActive="active_link">
@@ -52,7 +52,7 @@
       <div  class="logo">
           
       </div>
-      <div style="height: 100vh;">
+      <div style="height: 91vh;">
          
           <div class="content-div">
               <router-outlet></router-outlet>

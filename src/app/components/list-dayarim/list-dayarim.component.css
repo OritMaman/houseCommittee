@@ -13,14 +13,15 @@ tr {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-
+tr:nth-child(odd) {
+  background-color: #ffffffa5;
+}
 table {
   border-collapse: collapse;
   /* width: 100%; */
   margin: 0 auto;
   direction: ltr;
   width: 90%;
-  margin-right: 0;
   padding-right: 0;
   margin-top: 20px;
   box-shadow: 0 16px 38px -12px rgb(155 155 155 / 56%), 0 4px 25px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
@@ -39,7 +40,7 @@ table button {
 }
 .icon-search {
   position: absolute;
-  right: 350px;
+  left: 75px;
   color: #d2232a;
   margin-top: 2px;
   cursor: pointer;
@@ -48,4 +49,23 @@ table button {
   line-height: 30px;
   padding-right: 5px;
   width: 30px;
+  top:100px
+}
+input{min-width: 250px;
+  float: left;
+  margin: 20px 50px;}
+
+  .input-search {
+    font-size: 15px;
+    text-align: right;
+}
+
+.input-search {
+    border-radius: 15px;
+    border: 2px solid #d2232a;
+    font-size: 14px;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 5px;
+    min-width: 200px;
 }

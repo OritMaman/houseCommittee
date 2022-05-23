@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Building } from 'src/app/classes/building';
 import { Cities } from 'src/app/classes/cities';
 import { BuildingService } from 'src/app/services/building.service';
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class DayarComponent implements OnInit {
 
-  constructor(public d: DayarService, public buildingSer: BuildingService, public dayarSer: DayarService, public citiesSer: CitiesService) { }
+  constructor(public router:Router,public d: DayarService, public buildingSer: BuildingService, public dayarSer: DayarService, public citiesSer: CitiesService) { }
   building: Building;
   city: Cities = new Cities();
   ngOnInit(): void {
@@ -38,5 +39,8 @@ export class DayarComponent implements OnInit {
 
     }
 
+  }
+  logout(){
+    this.router.navigateByUrl('');
   }
 }

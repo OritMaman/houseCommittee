@@ -2,7 +2,7 @@
 <br>
 <div *ngIf="isShow===true">
     <input type="text" placeholder="חיפוש דייר..." name="search" (keyup)="onKey($event)" style="min-width:250px"
-        class="input" />
+        class="input-search" />
     <mat-icon class="icon-search">search</mat-icon>
     <br>
     <div *ngIf="listD1.length!=0">
@@ -48,7 +48,7 @@
                 <td>דירה {{Dayar.NumFlat}}</td>
                 <td>{{Dayar.LastName}}</td>
                 <td *ngIf="!Dayar.FirstName">דירה - {{Dayar.NumFlat}}</td>
-                <td>{{Dayar.FirstName}}</td>
+                <td *ngIf="Dayar.FirstName">{{Dayar.FirstName}}</td>
 
             </tr>
             

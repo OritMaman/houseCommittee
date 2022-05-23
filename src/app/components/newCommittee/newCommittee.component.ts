@@ -18,6 +18,7 @@ export class NewCommitteeComponent implements OnInit {
   //dayar.PsWord:string;
   ngOnInit(): void {
   }
+  back(){}
   begain() {//דרוש בדיקה
     debugger
     if (this.dayar.FirstName == null || this.dayar.LastName == null || this.dayar.MailAddress == null || this.dayar.Phone == null ||

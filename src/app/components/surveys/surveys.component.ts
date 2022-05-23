@@ -11,7 +11,12 @@ import Swal from 'sweetalert2';
 })
 export class SurveysComponent implements OnInit {
 
-  constructor(public dayarSer: DayarService, public surveysSer: SurveysService) { }
+  constructor(public dayarSer: DayarService, public surveysSer: SurveysService) {
+
+    if(!surveysSer.listS || surveysSer.listS.length === 0 ){
+      surveysSer.listS = [];
+    }
+   }
 
   isShow: boolean = true;
 

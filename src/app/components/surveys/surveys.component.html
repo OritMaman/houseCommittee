@@ -4,7 +4,7 @@
 <mat-icon class="mat-add" *ngIf="dayarSer.dayar.IsHouseCommittee"
  routerLink="/headCommittee/creatingSurvey">add
 </mat-icon>
-<table *ngIf="surveysSer.listS.length > 0" class="table">
+<table  class="table">
     <thead>
         <tr>
             <th><b>שם הסקר</b></th>
@@ -13,7 +13,7 @@
         </tr>
         <tr *ngFor="let survey of surveysSer.listS">
             <td>{{survey.SubSurvey}}</td>
-            <td>ענו {{survey.NumAnswers}}</td>
+            <td style="direction: rtl">{{survey.NumAnswers}} ענו </td>
             <!--{{surveysSer.surveysToEnter.NumAnswers}}-->
             <td>
                 <mat-icon class="mat-set" routerLink="/headCommittee/results/{{survey.SurveyId}}">desktop_windows</mat-icon>
