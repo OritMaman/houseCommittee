@@ -4,6 +4,7 @@ import { BuildingService } from 'src/app/services/building.service';
 import Swal from 'sweetalert2';
 import { Dayar } from '../../classes/dayar';
 import { DayarService } from '../../services/dayar.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-newCommittee',
@@ -12,13 +13,15 @@ import { DayarService } from '../../services/dayar.service';
 })
 export class NewCommitteeComponent implements OnInit {
 
-  constructor(public dayarSer: DayarService, public buildingSer: BuildingService, public r: Router) { }
+  constructor(private location: Location,public dayarSer: DayarService, public buildingSer: BuildingService, public r: Router) { }
   dayar: Dayar = new Dayar()
   verifyCode1: string;
   //dayar.PsWord:string;
   ngOnInit(): void {
   }
-  back(){}
+  back(){
+    this.location.back();
+  }
   begain() {//דרוש בדיקה
     debugger
     if (this.dayar.FirstName == null || this.dayar.LastName == null || this.dayar.MailAddress == null || this.dayar.Phone == null ||

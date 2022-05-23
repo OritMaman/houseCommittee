@@ -11,7 +11,7 @@ import { TakalotService } from "src/app/services/takalot.service";
 import { TakalotCategoryService } from "src/app/services/takalotCategory.service";
 import { UrgencyLevelService } from "src/app/services/urgencyLevel.service";
 import Swal from 'sweetalert2';
-
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -21,7 +21,7 @@ import Swal from 'sweetalert2';
 })
 export class AddFaultComponent implements OnInit {
 
-  constructor(private TakalotService: TakalotService,
+  constructor(private location: Location,private TakalotService: TakalotService,
     private TakalotCategoryService: TakalotCategoryService,
     private UrgencyLevelService: UrgencyLevelService, 
     public r :Router,
@@ -114,5 +114,7 @@ this.newTakala.TakalaDescription
       }
     )}
   }
-
+  back(){
+    this.location.back();
+  }
 }

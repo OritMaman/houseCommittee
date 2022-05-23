@@ -164,9 +164,9 @@ mat-sidenav-container {
     text-align: center;
     color: #d2232a;
     font-weight: 100;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 4rem;
-    border-bottom: 1px solid;
+    border-bottom: 2px solid;
     width: 250px;
     margin: auto;
 }
