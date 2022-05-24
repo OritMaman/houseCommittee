@@ -18,6 +18,7 @@ export class BankAccountComponent implements OnInit {
   next() {
     this.bankTransfers.BuildingId = this.dayarSer.dayar.BuildingId
     this.bankTransfers.DayarId = this.dayarSer.dayar.DayarId
+    this.bankTransfers.YeteraOnOpen = 0
     debugger
     this.bankSer.addBankAccount(this.bankTransfers).subscribe(
       data => {

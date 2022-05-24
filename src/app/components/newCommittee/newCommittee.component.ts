@@ -16,13 +16,12 @@ export class NewCommitteeComponent implements OnInit {
   constructor(private location: Location,public dayarSer: DayarService, public buildingSer: BuildingService, public r: Router) { }
   dayar: Dayar = new Dayar()
   verifyCode1: string;
-  //dayar.PsWord:string;
   ngOnInit(): void {
   }
   back(){
     this.location.back();
   }
-  begain() {//דרוש בדיקה
+  begain() {
     debugger
     if (this.dayar.FirstName == null || this.dayar.LastName == null || this.dayar.MailAddress == null || this.dayar.Phone == null ||
       this.dayar.PsWord == null)
@@ -32,14 +31,19 @@ export class NewCommitteeComponent implements OnInit {
         Swal.fire('', "ווידוא סיסמא אינו תואם לסיסמא", 'warning');
       else {
         debugger
-        this.dayar.IsHouseCommittee = true
+        this.dayarSer.isValidMail(this.dayar.MailAddress).subscribe(
+          data => {
+            if(data == false)
+            Swal.fire('', "המייל אינו תקין", 'error');
+            if(data == true)
+            this.dayar.IsHouseCommittee = true
         this.dayarSer.addDayar(this.dayar).subscribe(
           data => {
             debugger
             if (data === null)
               Swal.fire('', "בעייה בכניסה למערכת", 'error');
             else
-              if (data.DayarId == -1)//?
+              if (data.DayarId == -1)
                 Swal.fire('', "מייל זה מופיע כבר במערכת", 'error');
               else {
                 // Swal.fire('', "דייר זה הוסף בהצלחה", 'success');
@@ -51,6 +55,8 @@ export class NewCommitteeComponent implements OnInit {
           },
           err => { Swal.fire('', err.message, 'error') }
         )
+          }, err => { Swal.fire('', err.message, 'error')})
+        
       }
 
     //בדיקה שכל התיבות טקסט מלאות

@@ -1,34 +1,4 @@
 
-<!-- 
-
-<header>
-  <nav class="navbar navbar-expand-lg  fixed-top bg-danger shadow-lg p-3 mb-5 rounded opacity-75">
-    <div class="container-fluid" style="direction: rtl">
-      <div mdbCollapse class="collapse navbar-collapse" id="fixedNavbarExample">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="#">שלום   {{this.d.dayar.FirstName}} {{this.d.dayar.LastName}}</a>
-          </li>
-           
-          <li class="nav-item" *ngIf="dayarSer.dayar.BuildingId!=undefined">
-            <a class="nav-link" href="#">{{this.buildingSer.buildingAddress.Street}}
-              {{this.buildingSer.buildingAddress.NumBuilding}}<br>
-              {{this.city.CityName}}</a>
-          </li>
-         
-          <li class="nav-item" *ngIf="dayarSer.dayar.BuildingId!=undefined">
-            <a class="nav-link" href="#">{{this.buildingSer.building.Street}}
-              {{this.buildingSer.building.NumBuilding}}<br>
-              {{this.buildingSer.city.CityName}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header> -->
-
-
 <mat-sidenav-container>
   <mat-sidenav #sidenav opened mode="side" position="end" class="side-cont-admin">
       <mat-nav-list>
@@ -37,7 +7,7 @@
           <mat-icon class="logout" (click)="logout();">login</mat-icon> 
      
         <!--כניסה לבניין-->     
-        <a mat-list-item  *ngIf="dayarSer.dayar.BuildingId!=undefined" href="#">{{this.buildingSer.buildingAddress.Street}}
+        <a mat-list-item  *ngIf="dayarSer.dayar.BuildingId!=undefined && this.buildingSer.building.Street == undefined" href="#">{{this.buildingSer.buildingAddress.Street}}
           {{this.buildingSer.buildingAddress.NumBuilding}}
           {{this.city.CityName}}</a>
     
@@ -70,7 +40,7 @@
           <a mat-list-item routerLink="/headCommittee/faults" routerLinkActive="active_link">
             <mat-icon>error</mat-icon> &nbsp;תקלות
         </a>
-        <a mat-list-item routerLink="/headCommittee/committee-payments" routerLinkActive="active_link">
+        <a mat-list-item  *ngIf="dayarSer.dayar.IsHouseCommittee" routerLink="/headCommittee/committee-payments" routerLinkActive="active_link">
           <mat-icon>payment</mat-icon> &nbsp;תזכורות לתשלומים
       </a>
       <a mat-list-item   routerLink="/headCommittee/bank-transfers" routerLinkActive="active_link">
@@ -83,7 +53,7 @@
       <div  class="logo">
           
       </div>
-      <div style="height: 91vh;">
+      <div style="height: 94vh;">
          
           <div class="content-div">
               <router-outlet></router-outlet>

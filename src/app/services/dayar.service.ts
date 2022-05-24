@@ -52,6 +52,10 @@ editPassword(dayarId:number,pass:string):Observable<Dayar>
 {debugger
   return this.http.get<Dayar>(this.url+"editPassword/"+dayarId+"/"+pass)
 }
+isValidMail(mail:string):Observable<boolean>
+{debugger
+  return this.http.get<boolean>(this.url+"IsValidEmail/"+mail)
+}
 }
 
    

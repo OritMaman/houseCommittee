@@ -9,7 +9,7 @@
         שם הבנק: {{bankTransfers.NameBank}} <br>
         מספר הסניף: {{bankTransfers.NumSnif}} <br>
         מספר חשבון: {{bankTransfers.NumAccount}} <br>
-        יתרת פתיחה: {{bankTransfers.YeteraOnOpen}} <br>
+        <!-- יתרת פתיחה: {{bankTransfers.YeteraOnOpen}} <br> -->
         <button *ngIf="dayarSer.dayar.IsHouseCommittee" (click)="show()">עריכת פרטים</button>
     </div>
     <div>
@@ -35,11 +35,11 @@
                 <input class="input" id="numCount" #NumCount=ngModel name="NumCount" type="number" required
                     [(ngModel)]="bankTransfers.NumAccount" />
             </div>
-            <div class="row-wrapper">
+            <!-- <div class="row-wrapper">
                 <label for="yetera"> יתרת פתיחה:</label><br />
                 <input class="input" id="yetera" #Yetera=ngModel name="Yetera" type="number" required
                     [(ngModel)]="bankTransfers.YeteraOnOpen" />
-            </div>
+            </div> -->
 
             <!-- <p>העלה תעודה מזהה🔗 </p>
             <p> העלה מסמך🔗</p> -->

@@ -58,6 +58,7 @@ debugger
     debugger
     this.dayarSer.SortByName(this.search, this.dayarSer.dayar.BuildingId).subscribe(data => { this.dayarSer.listD = data; }, err => { console.log(err); })
   }
+  da:Dayar
   onMySave(dayarEdit: Dayar) {
     debugger
 
@@ -70,6 +71,11 @@ debugger
             Swal.fire('', "מייל זה מופיע במערכת או שאינו חוקי נא הכנס מייל אחר", 'error')
           else {
             debugger
+            // 
+            // this.da = this.dayarSer.listD.find(x => x.DayarId == dayarEdit.DayarId);
+            // if(this.da.MailAddress === dayarEdit.MailAddress)
+            // Swal.fire('', "פרטי הדייר התעדכנו בהצלחה", 'success')
+            // else
             Swal.fire('', "הדייר הוסף בהצלחה, ברגעים אלו ממש נשלח מייל לדייר עם קישור לאתר ולהחלפת סיסמה ראשונית", 'success')
             this.isShow = true;
             this.dayarSer.listD = d

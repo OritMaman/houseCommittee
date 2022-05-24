@@ -304,7 +304,8 @@ select {
     padding: 0 5px;
     min-width: 200px;
 }
-.navbar-expand-lg .navbar-collapse{justify-content: center;}
+.navbar-expand-lg .navbar-collapse{justify-content: left;
+    margin-left: 17%;}
 .navbar-expand-lg .navbar-collapse
 li{
     margin: 0 7px;

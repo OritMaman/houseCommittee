@@ -20,14 +20,15 @@
           {{Dayar.FirstName}} {{Dayar.LastName}} &nbsp;|&nbsp; דירה מספר - {{Dayar.NumFlat}} <br></label>
       </div>
     </div>
-
-    תשלום חודשי: <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1"><br>
-    תשלום חד פעמי:<input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">
-    <div *ngIf="!paymentSer.radioB1">
-      <label for="paymentFor"> תשלום עבור:</label><br>
-      <input type="text" class="input" id="paymentFor" name="for" [(ngModel)]="payFor"><br>
-      <label for="sum"> סכום:</label><br>
-      <input type="text" class="input" id="sum" name="sum" [(ngModel)]="sum"><br>
+    <div class="dir-wrap">
+      <input type="radio" name="radio1" checked [value]="true" [(ngModel)]="paymentSer.radioB1">תשלום חודשי<br>
+      <input type="radio" name="radio1" [value]="false" [(ngModel)]="paymentSer.radioB1">תשלום חד פעמי
+      <div *ngIf="!paymentSer.radioB1">
+        <label for="paymentFor"> תשלום עבור:</label><br>
+        <input type="text" class="input" id="paymentFor" name="for" [(ngModel)]="payFor"><br>
+        <label for="sum"> סכום:</label><br>
+        <input type="text" class="input" id="sum" name="sum" [(ngModel)]="sum"><br>
+      </div>
     </div><br><br>
     <button class="buttons" (click)="send()">שלח תזכורת לתשלום</button>
 

@@ -53,7 +53,7 @@ export class CreatingBuildingComponent implements OnInit {
         if (data === null)
           Swal.fire('', "בעייה בהוספת הבניין", 'error');//הוא מוסיף לי את הבניין למרות שתיבות הטקסט ריקות..
         else {
-          Swal.fire('', "בניין זה נוסף בהצלחה", 'success');
+          //Swal.fire('', "בניין זה נוסף בהצלחה", 'success');
           this.buildingSer.building = data
           this.dayarSer.dayar.BuildingId = this.buildingSer.building.BuildingId
           this.citiesSer.getNameCity(this.building.CityId).subscribe(
@@ -86,7 +86,7 @@ export class CreatingBuildingComponent implements OnInit {
                   },
                   err => { Swal.fire('', err.message, 'error') }
                 )
-                //  this.r.navigate(['/headCommittee/dayarDetails']);//
+               
                 this.r.navigate(['/headCommittee/bankAccount']);
               }
 

@@ -2,8 +2,9 @@
 <br>
 
 <input class="input" #MessageContent=ngModel id="MessageContent" name="MessageContent" type="string"
-    placeholder="כתוב את ההודעה שלך כאן" required [(ngModel)]="message.MessageContent" style="min-width:250px" />
-<mat-icon class="icon-send" (click)="addMessage();MessageContent.reset()">send</mat-icon>
+    placeholder="כתוב את ההודעה שלך כאן" required [(ngModel)]="message.MessageContent" style="min-width:250px" 
+    (keyup.enter)="addMessage();MessageContent.reset()" />
+<mat-icon class="icon-send" type="submit" (click)="addMessage();MessageContent.reset()">send</mat-icon>
 <!-- <button class="buttons" (click)="addMessage();MessageContent.reset()">הוסף הודעה</button>  -->
 <!-- <p>הוסף קובץ🔗</p><input type="file" name="file1"> -->
 <div class="row">
@@ -20,7 +21,7 @@
     </ul>
     <div class="col-6 form-wrapper">
         <h2>שלום לכל דיירי הבניין!</h2>
-        <p> אנחנו גאים להציג לכם את לוח שיח הדיירים החדש של ועד חכם<br>
+        <p> אנחנו גאים להציג לכם את לוח שיח הדיירים החדש של בית הוועד<br>
             .הלוח מאפשר דו שיח בין כל דיירי הבניין בצורה פשוטה וידידותית<br>
             .כל אחד מהדיירים יכול לכתוב פוסט ללוח וכל אחד מהדיירים האחרים יכול להוסיף תגובה<br>
             ...זהו בדיוק המקום לכתוב סיכום של ישיבת הועד, או סתם לשאול אם למישהו יש סוכר שאפשר להלוות</p>

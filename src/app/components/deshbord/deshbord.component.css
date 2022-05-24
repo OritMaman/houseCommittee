@@ -141,6 +141,8 @@ mat-icon {
     background: linear-gradient(131deg, #ffd505, #f7f300);
     box-shadow: 0 7px 20px 0 rgb(0 0 0 / 14%), 0 9px 10px -5px #00000070;
 } */
+
+canvas{    background: #ffffff7d;}
 .round-wrap,
 .row {
     text-align: center;

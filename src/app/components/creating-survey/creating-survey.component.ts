@@ -73,7 +73,7 @@ export class CreatingSurveyComponent implements OnInit {
         if (data === null)
           Swal.fire('', "בעייה בהוספת הסקר", 'error');
         else {
-          Swal.fire('', "הסקר הוסף בצלחה", 'success');
+        //  Swal.fire('', "הסקר הוסף בצלחה", 'success');
           debugger
           this.surveysSer.survey = data
           this.r.navigate(['/headCommittee/surveys']);

@@ -24,7 +24,7 @@ export class FaultsComponent implements OnInit {
   AllTakalotAfterSort: Array<Takalot> = new Array<Takalot>()
   AllTakalotCategory: Array<TakalotCategory> = new Array<TakalotCategory>()
   AllUrgencyLevel: UrgencyLevel[] = [];
-  topics = ['תיאור', 'תאריך פתיחה', 'חומרה', '?האם טופל', 'נפתח ע"י', 'קטגוריה', 'מספר תקלה'];
+  topics = ['תיאור', 'תאריך פתיחה', 'חומרה', 'האם טופל?', 'נפתח ע"י', 'קטגוריה', 'מספר תקלה'];
   editTakala: Takalot = new Takalot();
   ngOnInit(): void {
     this.TakalotService.GetAllById(this.dayarSer.dayar.BuildingId).subscribe(//this.TakalotService.GetAll().subscribe(

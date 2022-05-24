@@ -6,13 +6,13 @@
         <option selected="true" disabled >{{this.dayarSer.dayar.FirstName}}-{{ this.dayarSer.dayar.Phone}}</option>
     </select><br><br> -->
 
-   <!----> <label for="category">:קטגוריה</label><br>
+   <!----> <label for="category">קטגוריה:</label><br>
     <select (change)="selectByCategory($event)" id="category">
         <option selected="true" disabled >--בחירת קטגוריה--</option>
         <option *ngFor="let c of AllTakalotCategory">{{c.DescriptionC}}</option>
     </select><br><br>
 
-<label for="urgency">:דחיפות</label><br>
+<label for="urgency">דחיפות:</label><br>
     <select (change)="chooseUrgency($event)" id="urgency">
         <option selected="true" disabled >--בחר דחיפות--</option>
         <option *ngFor="let u of AllUrgencyLevel">{{u.NameUrgency}}</option><!----{{u.UrgencyLevelId}}-->
@@ -23,6 +23,6 @@
 <label>:תיאור התקלה</label><br>
 <textarea rows="5" cols="30" name="textarea1" [(ngModel)]="newTakala.TakalaDescription"></textarea>
 <br><br>
-<button class="buttons" (click)="OKTakala()">יצירת תקלה</button>
+<button class="buttons" (click)="OKTakala()"  type="submit">יצירת תקלה</button>
     
    </form>
