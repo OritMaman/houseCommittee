@@ -55,9 +55,9 @@ export class DeshbordComponent implements OnInit {
   barChartPlugins = [];
 
   barChartData: ChartDataSets[] = [
-    { data: [], label: 'סך הוצאות' },
-
     { data: [], label: 'סך הכנסות' },
+
+    { data: [], label:   'סך הוצאות'},
   ];
 
 
